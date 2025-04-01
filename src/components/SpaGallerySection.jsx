@@ -1,14 +1,14 @@
 import React from "react";
-import FlowerUnderHeader from "../public/img/Flower-UnderHeader.svg";
-import Spa1 from "../public/img/Spa1.svg";
-import Spa2 from "../public/img/Spa2.svg";
-import Spa3 from "../public/img/Spa3.svg";
-import Spa4 from "../public/img/Spa4.svg";
-import Spa5 from "../public/img/Spa5.svg";
+import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
+import Spa1 from "/img/Spa1.svg";
+import Spa2 from "/img/Spa2.svg";
+import Spa3 from "/img/Spa3.svg";
+import Spa4 from "/img/Spa4.svg";
+import Spa5 from "/img/Spa5.svg";
 const SpaGallerySection = () => {
   return (
     <div className="container mx-auto px-4 py-16 max-w-6xl">
-      <div className="flex flex-col text-center justify-center mb-10">
+      <div className="flex flex-col text-center justify-center mb-10 gap-4">
         <h2 className="text-[20px] font-normal">About Us</h2>
         <img
           src={FlowerUnderHeader}
