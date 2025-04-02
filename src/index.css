@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'SVN';
-    src: url('./public/fonts/SVN-Magnificent.otf') format('opentype');
+    src: url('/fonts/SVN-Magnificent.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
