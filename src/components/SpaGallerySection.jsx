@@ -7,14 +7,10 @@ import Spa4 from "/img/Spa4.svg";
 import Spa5 from "/img/Spa5.svg";
 const SpaGallerySection = () => {
   return (
-    <div className="container mx-auto px-4 py-16 max-w-6xl">
+    <div className="container mx-auto py-16 max-w-6xl">
       <div className="flex flex-col text-center justify-center mb-10 gap-4">
         <h2 className="text-[20px] font-normal">About Us</h2>
-        <img
-          src={FlowerUnderHeader}
-          alt="Decorative divider"
-          className="h-6"
-        />
+        <img src={FlowerUnderHeader} alt="Decorative divider" className="h-6" />
       </div>
 
       <h1 className="text-4xl md:text-5xl text-center font-light text-gray-800 mb-6">
@@ -32,60 +28,35 @@ const SpaGallerySection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-12 gap-6 mb-16">
-        <div className="col-span-2 flex flex-col justify-center">
-          <p className="transform -rotate-90 origin-center whitespace-nowrap text-gray-600 font-medium">
-            Skilled and Certified Professionals
-          </p>
+      <div className="flex justify-between gap-28 mb-12">
+        <div className="flex">
+          <div className="self-end pb-40">
+            {" "}
+            <img src={Spa2} alt="" className="w-[202px] h-[202px]" />
+          </div>
+          <div className="flex items-center justify-center h-64 w-16 ">
+            <p className="transform -rotate-90 origin-center whitespace-nowrap  font-medium">
+              Skilled and Certified Professionals
+            </p>
+          </div>
+          <div className="relative">
+            <img src={Spa1} alt="" className="w-[363px] h-[554px]" />
+            <p className="text-[18px] absolute left-1/3 w-full">Certified FDA-Approved Materials</p>
+          </div>
         </div>
-
-        <div className="col-span-5">
-  <img
-    src={Spa1}
-    alt="Relaxing massage treatment"
-    className="w-full h-full object-cover"
-  />
-  <p className="text-center mt-4 text-gray-600">
-    Certified FDA-Approved Materials
-  </p>
-</div>
-
-<div className="col-span-5 grid grid-cols-2 gap-4 h-1/2">
-  <div>
-    <img
-      src={Spa3}
-      alt="Couple massage"
-      className="w-full h-full object-cover"
-    />
-  </div>
-  <div>
-    <img
-      src={Spa5}
-      alt="Spa interior"
-      className="w-full h-full object-cover"
-    />
-    <p className="text-center mt-2 text-gray-600">
-      More Than 20 Operators
-    </p>
-  </div>
-</div>
-
-      </div>
-
-      <div className="grid grid-cols-12 gap-6 mb-16">
-        <div className="col-span-3">
-          <img
-            src={Spa2}
-            alt="Facial treatment"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="col-span-4 col-start-9">
-          <img
-            src={Spa4}
-            alt="Head massage"
-            className="w-full h-full object-cover"
-          />
+        <div className="flex justify-between gap-5">
+          <div className="flex flex-col gap-20 relative">
+            <img src={Spa3} alt="" className="w-[250px] h-[300px]" />
+            <p className="absolute top-1/2 -translate-y-1/2 left-1/2 w-full">
+              More Than 20 Operators
+            </p>
+            <img src={Spa4} alt="" className="w-[250px] h-[300px]" />
+          </div>
+          <div className="flex flex-col">
+            <div className="pt-10">
+              <img src={Spa5} alt="" className="w-[203px] h-[203px]" />
+            </div>
+          </div>
         </div>
       </div>
 
