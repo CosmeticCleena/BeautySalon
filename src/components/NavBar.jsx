@@ -11,12 +11,12 @@ const NavBar = () => {
         <img src={logo} alt="Logo" className="w-[60px]" />
       </div>
       <div className="flex gap-12 justify-center text-white items-center text-[18px] leading-[26px]">
-        <NavLink>Giới thiệu</NavLink>
-        <NavLink>Về chúng tôi</NavLink>
-        <NavLink>Hệ thống dịch vụ</NavLink>
-        <NavLink>Câu chuyện khách hàng</NavLink>
-        <NavLink>Tin tức</NavLink>
-        <NavLink>Liên hệ</NavLink>
+        <NavLink to="/">Giới thiệu</NavLink>
+        <NavLink to="/about">Về chúng tôi</NavLink>
+        <NavLink to="/services">Hệ thống dịch vụ</NavLink>
+        <NavLink to="/testimonials">Câu chuyện khách hàng</NavLink>
+        <NavLink to="/news">Tin tức</NavLink>
+        <NavLink to="/contact">Liên hệ</NavLink>
       </div>
 
       <div className="flex gap-5 justify-center text-black *:w-[24px] *:cursor-pointer">
