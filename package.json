@@ -8,8 +8,7 @@
   "build": "vite build",
   "lint": "eslint .",
   "preview": "vite preview --port=5173",
-  "start": "vite preview --port=5173"
-},
+"start": "vite preview --port=5173 --host"},
   "dependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
