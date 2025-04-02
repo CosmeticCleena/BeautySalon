@@ -26,7 +26,7 @@ const SpaExpertTeam = () => {
       </div>
       <div className="flex flex-col items-center gap-10 mt-6">
         <h2 className="text-[44px] font-normal">Expertise You Can Trust</h2>
-        <div className="flex flex-wrap justify-center gap-5 w-[80%] mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-4  w-[80%] mb-24">
           {displayedExperts.map((expert, index) => (
             <SpaExpertCard key={index} expert={expert} />
           ))}
@@ -35,7 +35,7 @@ const SpaExpertTeam = () => {
       <div className="flex justify-center w-full">
         <button 
           className="bg-[#D1AE62] hover:bg-[#D1B76E] text-white py-3 px-8 transition-colors"
-          onClick={handleLoadMore}
+          // onClick={handleLoadMore}
         >
           {buttonText}
         </button>

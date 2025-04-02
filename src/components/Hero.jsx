@@ -3,7 +3,7 @@ import HeroImage from '/img/Hero.svg';
 const Hero = () => {
   return (
     <div
-      className="w-full h-screen bg-cover bg-center -z-10"
+      className="w-full h-[110vh] bg-cover bg-center -z-10"
       style={{ backgroundImage: `url(${HeroImage})` }}
     >
       <div className='flex flex-col items-center justify-center h-full'>
