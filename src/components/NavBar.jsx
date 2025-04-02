@@ -6,9 +6,9 @@ import UserIcon from "/img/User-Icon.svg";
 import NavLink from "./NavLink";
 const NavBar = () => {
   return (
-    <div className="w-full flex justify-around absolute top-0 pt-4 z-2">
+    <div className="w-full flex justify-center gap-24 absolute top-0 pt-4 z-2">
       <div className="flex items-center">
-        <img src={logo} alt="Logo" className="w-[85px]" />
+        <img src={logo} alt="Logo" className="w-[60px]" />
       </div>
       <div className="flex gap-12 justify-center text-white items-center text-[18px] leading-[26px]">
         <NavLink>Giới thiệu</NavLink>
