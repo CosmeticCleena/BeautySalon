@@ -23,7 +23,7 @@ const Footer = () => {
             <input
               type="text"
               placeholder="Enter your email"
-              className="bg-white bg-opacity-15 p-4 pr-6 text-[#6A6A6A]"
+              className="bg-white bg-opacity-15 p-4 pr-6 text-white"
             />
             <button className="bg-[#D1AE62] text-black px-4">Subscribe Now</button>
           </div>

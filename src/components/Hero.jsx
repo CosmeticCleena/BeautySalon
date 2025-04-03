@@ -35,7 +35,7 @@ const Hero = () => {
         </div>
         <div className="absolute bottom-[40px] -translate-y-1/2 flex justify-center gap-8">
             {heroImage.map((image, index) => (
-              (<div className={`w-12 border-4 rounded-full ${heroImageIndex === index ? 'border-[#D1AE62]' : 'border-white'}`} key={index}>
+              (<div className={`w-12 border-4 rounded-full cursor-pointer ${heroImageIndex === index ? 'border-[#D1AE62]' : 'border-white'}`} key={index} onClick={()=>setHeroImageIndex(index)}>
 
               </div>)
             ))}

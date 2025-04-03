@@ -3,6 +3,8 @@ import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 import pricing from "../data/spaPricing";
 import PricingPlanCard from "./PricingPlanCard";
 const SpaPricing = () => {
+  const [category, setCategory] = React.useState(pricing.categories[0]);
+
   return (
     <div className="flex flex-col items-center justify-center py-40">
       <div className="flex flex-col items-center gap-4">
@@ -11,14 +13,14 @@ const SpaPricing = () => {
       </div>
       <h2 className="text-[44px] font-normal mt-3">Our Pricing Plan</h2>
       <div className="flex gap-12 my-12">
-        {pricing.categories.map((category) => (
-          <div className="text-[18px] font-medium text-[#6A6A6A] hover:bg-[#D1AE62] hover:text-white px-8 py-3 cursor-pointer">
+        {pricing.categories.map((category,index) => (
+          <div className="text-[18px] font-medium text-[#6A6A6A] hover:bg-[#D1AE62] hover:text-white px-8 py-3 cursor-pointer" onClick={() => setCategory(category)} key={index}>
             {category}
           </div>
         ))}
       </div>
       <div className="grid grid-cols-2 gap-10">
-        {pricing.services.map((service) => (
+        {pricing.services[category].map((service) => (
           <PricingPlanCard key={service.id} service={service} />
         ))}
       </div>

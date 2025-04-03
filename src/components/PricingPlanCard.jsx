@@ -15,7 +15,7 @@ const PricingPlanCard = ({ service }) => {
         </div>
       </div>
       
-      <p className="text-[44px] font-normal p-3 pl-10 border-l-[1px] border-l-[#D8D8D8] transition-colors duration-300 group-hover:text-[#D1AE62]">${service.price}</p>
+      <p className=" w-24 text-[44px] font-normal p-3 pl-5 border-l-[1px] border-l-[#D8D8D8] transition-colors duration-300 group-hover:text-[#D1AE62]">${service.price}</p>
     </div>
   );
 };
