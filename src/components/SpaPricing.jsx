@@ -24,7 +24,7 @@ const SpaPricing = () => {
           <PricingPlanCard key={service.id} service={service} />
         ))}
       </div>
-      <p className="text-[20px] font-bold mt-16">
+      <p className="text-[20px] font-medium mt-16">
         {" "}
         <i class="fa-solid fa-clock"></i>{" "}
         <span className="mx-3">{pricing.openingHours}</span>
