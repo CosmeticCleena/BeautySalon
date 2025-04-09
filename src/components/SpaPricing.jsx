@@ -6,7 +6,7 @@ const SpaPricing = () => {
   const [category, setCategory] = React.useState(pricing.categories[0]);
 
   return (
-    <div className="flex flex-col items-center justify-center py-40">
+    <div className="flex flex-col items-center justify-center py-16">
       <div className="flex flex-col items-center gap-4">
         <h2>Pricing</h2>
         <img src={FlowerUnderHeader} alt="" />

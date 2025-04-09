@@ -1,23 +1,27 @@
-import React from 'react'
-import HeroSubpage from '../components/AboutUs/HeroSubpage'
-import AboutSalon from '../components/AboutUs/AboutSalon'
-import LogoBar from '../components/LogoBar'
-import SpaExpertTeam from '../components/SpaExpertTeam'
-import Slider from '../components/AboutUs/Slider'
-import Advantages from '../components/AboutUs/Advantages'
-import Review from '../components/AboutUs/Review'
+import React from "react";
+import HeroSubpage from "../components/AboutUs/HeroSubpage";
+import AboutSalon from "../components/AboutUs/AboutSalon";
+import LogoBar from "../components/LogoBar";
+import SpaExpertTeam from "../components/SpaExpertTeam";
+import Slider from "../components/AboutUs/Slider";
+import Advantages from "../components/AboutUs/Advantages";
+import Review from "../components/AboutUs/Review";
 const AboutPage = () => {
   return (
     <>
-      <HeroSubpage title={'About Us'} subtitle={"Home / About Us"} imgLink={'/img/aboutUs/Hero.svg'}/>
-      <AboutSalon/>
-      <LogoBar bgColor={""}/>
-      <Slider/>
+      <HeroSubpage
+        title={"About Us"}
+        subtitle={"Home / About Us"}
+        imgLink={"/img/aboutUs/Hero.svg"}
+      />
+      <AboutSalon />
+      <LogoBar bgColor={""} />
+      <Slider />
       <Advantages />
-      <SpaExpertTeam pt={"pt-2"}/>
-      <Review/>
+      <SpaExpertTeam pt={"pt-2"} />
+      <Review />
     </>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;
