@@ -4,13 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint .",
-  "preview": "vite preview --port=5173",
-"start": "vite preview --port=5173 --host"},
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview --port=5173",
+    "start": "vite preview --port=5173 --host"
+  },
   "dependencies": {
     "autoprefixer": "^10.4.21",
+    "lucide-react": "^0.487.0",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

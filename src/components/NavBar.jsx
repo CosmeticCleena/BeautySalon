@@ -6,7 +6,7 @@ import UserIcon from "/img/User-Icon.svg";
 import NavLink from "./NavLink";
 const NavBar = () => {
   return (
-    <div className="w-full flex justify-center gap-24 absolute top-0 pt-4 z-2">
+    <div className="w-full flex justify-center gap-24 absolute top-0 pt-4 z-10">
       <div className="flex items-center">
         <img src={logo} alt="Logo" className="w-[60px]" />
       </div>

@@ -10,34 +10,24 @@ import SpaVideoSection from "../components/SpaVideoSection";
 import SpaExpertTeam from "../components/SpaExpertTeam";
 import SpaAchievement from "../components/SpaAchievement";
 import SpaForm from "../components/SpaForm";
-import Footer from "../components/Footer";
 import SpaBlog from "../components/SpaBlog";
-import BackGround from "/img/BackGround.svg";
 
 const HomePage = () => {
   return (
-    <div 
-      className="min-h-screen w-full p-0 m-0 text-[16px] bg-no-repeat bg-fixed" 
-      style={{ 
-        backgroundImage: `url(${BackGround})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center"
-      }}
-    >
+    <>
       <Hero />
       <SpaProperties />
       <SpaGallerySection />
       <SpaFeatureServices />
-      <LogoBar />
+      <LogoBar bgColor={"bg-[#0D0D0D]"}/>
       <SpaAdvantage />
       <SpaPricing />
       <SpaVideoSection />
-      <SpaExpertTeam />
+      <SpaExpertTeam pt={"pt-[400px]"}/>
       <SpaAchievement />
       <SpaForm />
       <SpaBlog />
-      <Footer />
-    </div>
+    </>
   );
 };
 

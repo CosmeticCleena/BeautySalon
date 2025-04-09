@@ -4,14 +4,20 @@ import Jovian from "/img/logo/Jovian.svg";
 import Lakme from "/img/logo/Lakme.svg";
 import Revion from "/img/logo/Revion.svg";
 import Biotherm from "/img/logo/Biotherm.svg";
-const LogoBar = () => {
+import LorealWhite from "/img/logo/Loreal_Light.svg";
+import JovianWhite from "/img/logo/jovian_Light.svg";
+import LakmeWhite from "/img/logo/Lakme_Light.svg";
+import RevionWhite from "/img/logo/Revion_Light.svg";
+import BiothermWhite from "/img/logo/Biotherm_Light.svg";
+
+const LogoBar = ({bgColor}) => {
   return (
-    <div className="flex bg-[#0D0D0D] w-full items-center justify-around py-28">
-      <img src={Revion}></img>
-      <img src={Jovian}></img>
-      <img src={Lakme}></img>
-      <img src={Biotherm}></img>
-      <img src={Loreal}></img>
+    <div className={`flex ${bgColor} w-full items-center justify-around py-28`}>
+      <img src={bgColor !== "" ? Revion : RevionWhite} alt="Revion logo" />
+      <img src={bgColor !== "" ? Jovian : JovianWhite} alt="Jovian logo" />
+      <img src={bgColor !== "" ? Lakme : LakmeWhite} alt="Lakme logo" />
+      <img src={bgColor !== "" ? Biotherm : BiothermWhite} alt="Biotherm logo" />
+      <img src={bgColor !== "" ? Loreal : LorealWhite} alt="Loreal logo" />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 import spaExpertInfo from "../data/spaExperInfo";
 import SpaExpertCard from "./SpaExpertCard";
 
-const SpaExpertTeam = () => {
+const SpaExpertTeam = ({pt}) => {
   const [displayCount, setDisplayCount] = useState(4);
   
   const handleLoadMore = () => {
@@ -19,7 +19,7 @@ const SpaExpertTeam = () => {
   const buttonText = displayCount >= spaExpertInfo.length ? "Show Less" : "More Team";
 
   return (
-    <div className="flex flex-col pt-[400px] pb-16">
+    <div className={`flex flex-col ${pt} pb-16`}>
       <div className="flex flex-col items-center gap-4">
         <h2 className="text-[20px] font-medium mb-2">Expert Team</h2>
         <img src={FlowerUnderHeader} alt="" />
