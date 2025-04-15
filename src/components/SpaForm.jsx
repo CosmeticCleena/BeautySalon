@@ -4,18 +4,18 @@ import CallIcon from "/img/Call-Icon.svg";
 const SpaForm = () => {
   return (
     <div className="w-full flex flex-col md:flex-row justify-center gap-12 py-24">
-      <div className="flex flex-col items-center md:items-start gap-8">
-        <h2 className="text-[44px]">Make Appointment</h2>
-        <img src={FlowerUnderHeader} alt="" />
-        <p className="max-w-[500px] text-center md:text-left">
+     <div className="flex flex-col items-center md:items-start gap-5 md:gap-6 lg:gap-8">
+        <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-normal text-center md:text-left">Make Appointment</h2>
+        <img src={FlowerUnderHeader} alt="Decorative divider" className="h-5 md:h-auto" />
+        <p className="max-w-[500px] text-center md:text-left text-sm md:text-base px-8 md:px-0">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </p>
-        <div className="flex bg-[#FFF7F4] p-5 gap-5">
-          <img src={CallIcon} alt="" />
+        <div className="flex bg-[#FFF7F4] p-4 md:p-5 gap-3 md:gap-5 w-full md:w-auto">
+          <img src={CallIcon} alt="Phone" className="w-10 h-10 md:w-auto md:h-auto" />
           <div className="flex flex-col justify-center items-start">
-            <p className="text-[20px] font-medium">Phone Appointment</p>
-            <p className="text-[24px] font-bold">+ 00 12345 67890</p>
+            <p className="text-[16px] md:text-[18px] lg:text-[20px] font-medium">Phone Appointment</p>
+            <p className="text-[18px] md:text-[20px] lg:text-[24px] font-bold">+ 00 12345 67890</p>
           </div>
         </div>
       </div>
