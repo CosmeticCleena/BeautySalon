@@ -1,14 +1,57 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import rightButton from "/img/rightButton.svg";
 import leftButton from "/img/leftButton.svg";
 import heroImage from "../data/spaHeroimages";
 
 const Hero = () => {
   const [heroImageIndex, setHeroImageIndex] = React.useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const minSwipeDistance = 50;
+
+  const nextImage = () => {
+    setHeroImageIndex((heroImageIndex + 1) % heroImage.length);
+  };
+
+  const prevImage = () => {
+    setHeroImageIndex(
+      (heroImageIndex - 1 + heroImage.length) % heroImage.length
+    );
+  };
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null); // reset touchEnd
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextImage();
+    }
+
+    if (isRightSwipe) {
+      prevImage();
+    }
+  };
+
   return (
     <div
       className="w-full h-[90vh] md:h-[100vh] lg:h-[110vh] bg-cover bg-center -z-10 relative"
       style={{ backgroundImage: `url(${heroImage[heroImageIndex].image})` }}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
     >
       <div className="flex flex-col items-center justify-center h-full px-4 md:px-8">
         <h1 className="text-white text-[12px] sm:text-[14px] md:text-[16px] font-[600]">
@@ -25,43 +68,34 @@ const Hero = () => {
         >
           Get An Appointment <i className="fa-solid fa-arrow-right"></i>
         </button>
-        
-        {/* Navigation buttons - hidden on very small screens */}
+
         <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-2 sm:px-8 md:px-16 lg:px-24 z-20">
-          <button 
-            onClick={() => setHeroImageIndex((heroImageIndex - 1 + heroImage.length) % heroImage.length)}
-            className="hidden sm:block"
-          >
-            <img 
-              src={leftButton} 
-              alt="Previous" 
+          <button onClick={prevImage} className="hidden sm:block">
+            <img
+              src={leftButton}
+              alt="Previous"
               className="h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16 p-2 sm:p-3 md:p-5 rounded-full bg-[#0D0D0D80] opacity-50 hover:opacity-90"
             />
           </button>
-          <button 
-            onClick={() => setHeroImageIndex((heroImageIndex + 1) % heroImage.length)}
-            className="hidden sm:block"
-          >
-            <img 
-              src={rightButton} 
-              alt="Next" 
+          <button onClick={nextImage} className="hidden sm:block">
+            <img
+              src={rightButton}
+              alt="Next"
               className="h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16 p-2 sm:p-3 md:p-5 rounded-full bg-[#0D0D0D80] opacity-50 hover:opacity-90"
             />
           </button>
         </div>
-        
-        {/* Indicator dots */}
+
         <div className="absolute bottom-[20px] sm:bottom-[30px] md:bottom-[40px] -translate-y-1/2 flex justify-center gap-2 sm:gap-4 md:gap-8">
-            {heroImage.map((image, index) => (
-              <div 
-                className={`w-4 h-4 sm:w-8 sm:h-8 md:w-12 md:h-12 border-2 sm:border-3 md:border-4 rounded-full cursor-pointer ${
-                  heroImageIndex === index ? 'border-[#D1AE62]' : 'border-white'
-                }`} 
-                key={index} 
-                onClick={() => setHeroImageIndex(index)}
-              >
-              </div>
-            ))}
+          {heroImage.map((image, index) => (
+            <div
+              className={`w-4 h-4 sm:w-8 sm:h-8 md:w-12 md:h-12 border-2 sm:border-3 md:border-4 rounded-full cursor-pointer ${
+                heroImageIndex === index ? "border-[#D1AE62]" : "border-white"
+              }`}
+              key={index}
+              onClick={() => setHeroImageIndex(index)}
+            ></div>
+          ))}
         </div>
       </div>
     </div>

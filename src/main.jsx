@@ -7,7 +7,7 @@ import ServicesPage from './pages/ServicesPage'
 import TestimonialsPage from './pages/TestimonialsPage'
 import NewsPage from './pages/NewsPage'
 import ContactPage from './pages/ContactPage'
-
+import NewsDetail from './pages/NewsDetail'
 import './index.css'
 import App from './App.jsx'
 
@@ -35,6 +35,10 @@ const routes = createBrowserRouter([
       {
         path: "news",
         element: <NewsPage />,
+      },
+      {
+        path: "news/:id",
+        element: <NewsDetail />,
       },
       {
         path: "contact",

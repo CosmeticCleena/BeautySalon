@@ -7,6 +7,7 @@ import NavLink from "./NavLink";
 
 const NavBar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -19,40 +20,71 @@ const NavBar = () => {
       }
     };
     
+    const handleScroll = () => {
+      // Chỉ kiểm tra vị trí cuộn cơ bản
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
     
     handleResize();
+    handleScroll(); // Kiểm tra vị trí cuộn ban đầu
     
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
+  // Xác định màu nền dựa trên vị trí cuộn
+  const navbarBgClass = scrolled ? 'bg-white shadow-md' : 'bg-transparent';
+
+  // Xác định màu chữ cho các liên kết
+  const textColor = scrolled ? 'text-gray-800' : 'text-white';
+
   return (
     <>
-      <div className="w-full flex justify-between top-0 py-3 z-30 px-6 md:px-12 lg:px-18 xl:px-24 fixed bg-white shadow-md lg:shadow-none lg:bg-transparent">
+      <div className={`w-full flex justify-between top-0 py-3 z-30 px-6 md:px-12 lg:px-18 xl:px-24 fixed transition-all duration-300 
+        bg-white md:bg-transparent ${scrolled ? 'md:bg-white md:shadow-md' : ''}`}
+      >
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="w-[60px]" />
+          <img 
+            src={logo}
+            alt="Logo" 
+            className="w-[60px]" 
+          />
         </div>
-        <div className="hidden lg:flex gap-12 justify-center text-white items-center text-[18px] leading-[26px] ">
-          <NavLink to="/">Giới thiệu</NavLink>
-          <NavLink to="/about">Về chúng tôi</NavLink>
-          <NavLink to="/services">Hệ thống dịch vụ</NavLink>
-          <NavLink to="/testimonials">Câu chuyện khách hàng</NavLink>
-          <NavLink to="/news">Tin tức</NavLink>
-          <NavLink to="/contact">Liên hệ</NavLink>
+        
+        <div className={`hidden lg:flex gap-12 justify-center items-center text-[18px] leading-[26px] ${textColor}`}>
+          <NavLink to="/" darkMode={!scrolled}>Giới thiệu</NavLink>
+          <NavLink to="/about" darkMode={!scrolled}>Về chúng tôi</NavLink>
+          <NavLink to="/services" darkMode={!scrolled}>Hệ thống dịch vụ</NavLink>
+          <NavLink to="/testimonials" darkMode={!scrolled}>Câu chuyện khách hàng</NavLink>
+          <NavLink to="/news" darkMode={!scrolled}>Tin tức</NavLink>
+          <NavLink to="/contact" darkMode={!scrolled}>Liên hệ</NavLink>
         </div>
 
-        <div className="hidden lg:flex gap-5 justify-center text-black *:w-[24px] *:cursor-pointer">
+        <div className={`hidden lg:flex gap-5 justify-center *:w-[24px] *:cursor-pointer text-black`}>
           <img src={SeachIcon} alt="Search" />
           <img src={UserIcon} alt="User" />
           <img src={CartIcon} alt="Cart" />
         </div>
+        
         <div className="flex justify-center items-center lg:hidden cursor-pointer z-35" onClick={toggleSidebar}>
-          <img src="/img/bar.svg" alt="Menu" />
+          <img 
+            src={"/img/bar.svg"}
+            alt="Menu" 
+          />
         </div>
       </div>
 
       <div className={`fixed top-[83px] right-0 h-full w-full bg-white z-30 transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-       
-        <div className="flex flex-col *:px-6 *:md:px-12">
+        <div className="flex flex-col *:px-6 *:md:px-12" onClick={toggleSidebar}>
           <NavLink to="/" className="py-3 border-b border-t border-gray-100 text-gray-900 hover:bg-gray-50">Giới thiệu</NavLink>
           <NavLink to="/about" className="py-3 border-b border-gray-100 text-gray-900 hover:bg-gray-50">Về chúng tôi</NavLink>
           <NavLink to="/services" className="py-3 border-b border-gray-100 text-gray-900 hover:bg-gray-50">Hệ thống dịch vụ</NavLink>
