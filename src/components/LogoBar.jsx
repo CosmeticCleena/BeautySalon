@@ -12,7 +12,7 @@ import BiothermWhite from "/img/logo/Biotherm_Light.svg";
 
 const LogoBar = ({bgColor}) => {
   return (
-    <div className={`flex ${bgColor} w-full items-center justify-around py-28`}>
+    <div className={`flex flex-col md:flex-row gap-10 ${bgColor} w-full items-center justify-around py-14 md:py-28`}>
       <img src={bgColor !== "" ? Revion : RevionWhite} alt="Revion logo" />
       <img src={bgColor !== "" ? Jovian : JovianWhite} alt="Jovian logo" />
       <img src={bgColor !== "" ? Lakme : LakmeWhite} alt="Lakme logo" />

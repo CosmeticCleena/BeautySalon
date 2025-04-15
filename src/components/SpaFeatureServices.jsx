@@ -10,8 +10,8 @@ const SpaFeatureServices = () => {
         <img src={FlowerUnderHeader} alt="Decorative divider"></img>
       </div>
       <div className="flex flex-col items-center justify-center gap-20">
-        <h2 className="text-[44px] font-normal">Wellness & Beauty Hub</h2>
-        <div className="flex justify-between gap-5">
+        <h2 className="text-[44px] font-normal text-center">Wellness & Beauty Hub</h2>
+        <div className="flex flex-col md:flex-row justify-between gap-5">
             {services_data.slice(0,3).map((service) => (
                 <FeatureServiceCard key={service.id} service={service} isUsingIcon={false} />
             ))}

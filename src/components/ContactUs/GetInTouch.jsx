@@ -1,0 +1,158 @@
+import React, { useState } from "react";
+import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
+import { contactInfo } from "../../data/contactInfo";
+
+const GetInTouch = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    message: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    // Add your form submission logic here
+  };
+
+  return (
+    <div className="pt-20">
+      <div className="flex flex-col items-center gap-4">
+        <h2 className="text-[44px] md:text-[36px] sm:text-[30px] font-medium mb-2 text-center px-4">
+          Get in Touch with Our Team.
+        </h2>
+        <img src={FlowerUnderHeader} alt="" />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+        {contactInfo.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col bg-[#FFF7F4] p-5 md:p-6 lg:p-8 gap-3 md:gap-4 
+                      cursor-pointer hover:scale-105 transition-all duration-300 
+                      ease-in-out rounded-lg shadow-lg"
+          >
+            <img
+              src={item.image}
+              alt=""
+              className="h-[60px] w-[60px] md:h-[70px] md:w-[70px] lg:h-[80px] lg:w-[80px]"
+            />
+            <h2 className="text-[20px] md:text-[22px] lg:text-[24px] font-bold break-words">
+              {item.title}
+            </h2>
+            <p className="text-[16px] md:text-[18px] lg:text-[20px] font-medium break-words">
+              {item.description}
+            </p>
+            <p className="text-[16px] md:text-[18px] lg:text-[20px] font-medium break-words overflow-wrap-anywhere">
+              {item.contact}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div className="w-full flex flex-col lg:flex-row mt-16">
+        {/* Map Section */}
+        <div className="w-full lg:w-1/2">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2317.8823161001756!2d105.87809485191738!3d21.046282648419957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a98d2d829ae7%3A0x2ca7c0ac000bda72!2zVmnhu4duIHRo4bqpbSBt4bu5IENMRUVOQQ!5e1!3m2!1sen!2s!4v1744698905493!5m2!1sen!2s"
+            width="100%"
+            style={{ border: 0, height: "100%", minHeight: "400px" }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        {/* Contact Form Section */}
+        <div className="flex-grow p-6 lg:p-12 bg-white">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="flex flex-col md:flex-row gap-4 w-full">
+              <div className="w-full md:w-1/2">
+                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#D1AE62] focus:border-[#D1AE62]"
+                  placeholder="Eleanor"
+                />
+              </div>
+              <div className="w-full md:w-1/2">
+                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">Last Name</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#D1AE62] focus:border-[#D1AE62]"
+                  placeholder="Edwards"
+                />
+              </div>
+            </div>
+            
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#D1AE62] focus:border-[#D1AE62]"
+                placeholder="glamspot@example.com"
+              />
+            </div>
+            
+            <div>
+              <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">Phone Number</label>
+              <input
+                type="tel"
+                id="phoneNumber"
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#D1AE62] focus:border-[#D1AE62]"
+                placeholder="(308) 555-0121"
+              />
+            </div>
+            
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700">Enter Messages</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={6}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#D1AE62] focus:border-[#D1AE62]"
+                placeholder="Aliquam porta nisl dolor, molestie pellentesque elit molestie in. Morbi metus neque, elementum ultam in a laoreet purus..."
+              />
+            </div>
+            
+            <div>
+              <button
+                type="submit"
+                className="w-full md:w-auto bg-[#D1AE62] hover:bg-[#D1B76E] text-white py-3 px-8 transition-colors rounded-md"
+              >
+                Send Messages
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default GetInTouch;

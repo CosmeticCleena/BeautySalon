@@ -12,19 +12,19 @@ const SpaPricing = () => {
         <img src={FlowerUnderHeader} alt="" />
       </div>
       <h2 className="text-[44px] font-normal mt-3">Our Pricing Plan</h2>
-      <div className="flex gap-12 my-12">
+      <div className="flex gap-2 md:gap-12 my-12">
         {pricing.categories.map((category,index) => (
-          <div className="text-[18px] font-medium text-[#6A6A6A] hover:bg-[#D1AE62] hover:text-white px-8 py-3 cursor-pointer" onClick={() => setCategory(category)} key={index}>
+          <div className="text-[18px] font-medium text-[#6A6A6A] hover:bg-[#D1AE62] hover:text-white px-3 md:px-8 py-3 cursor-pointer" onClick={() => setCategory(category)} key={index}>
             {category}
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid grid-col-1 md:grid-cols-2 gap-10 px-6">
         {pricing.services[category].map((service) => (
           <PricingPlanCard key={service.id} service={service} />
         ))}
       </div>
-      <p className="text-[20px] font-medium mt-16">
+      <p className="text-[20px] font-medium px-4 md:px-0 mt-16">
         {" "}
         <i class="fa-solid fa-clock"></i>{" "}
         <span className="mx-3">{pricing.openingHours}</span>

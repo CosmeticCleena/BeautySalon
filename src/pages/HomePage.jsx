@@ -22,11 +22,11 @@ const HomePage = () => {
       <LogoBar bgColor={"bg-[#0D0D0D]"}/>
       <SpaAdvantage />
       <SpaPricing />
-      <SpaVideoSection />
+      <SpaVideoSection pageType={"HomePage"}/>
       <SpaExpertTeam pt={"pt-[400px]"}/>
       <SpaAchievement />
       <SpaForm />
-      <SpaBlog />
+      <SpaBlog pageType={"blog"}/>
     </>
   );
 };

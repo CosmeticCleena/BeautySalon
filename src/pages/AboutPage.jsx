@@ -16,8 +16,8 @@ const AboutPage = () => {
       />
       <AboutSalon />
       <LogoBar bgColor={""} />
-      <Slider />
-      <Advantages />
+      <Slider type={"aboutUs"}/>
+      <Advantages pageType={"aboutPage"}/>
       <SpaExpertTeam pt={"pt-2"} />
       <Review />
     </>

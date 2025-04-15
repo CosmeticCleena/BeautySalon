@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {images} from "../../data/sliderImages";
-export default function ImageSlider() {
+export default function ImageSlider({type}) {
   const sliderRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -69,7 +69,7 @@ export default function ImageSlider() {
           }
         `}</style>
 
-        {images.map((image, index) => (
+        {images[type].map((image, index) => (
           <div key={index} className="w-1/4 flex-shrink-0 px-1">
             <img
               src={image}

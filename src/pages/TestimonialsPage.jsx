@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
 import HeroSubpage from "../components/AboutUs/HeroSubpage";
 import SpaGallerySection from "../components/SpaGallerySection";
 import BookAppointment from "../components/OurServices/BookAppointment";
+import Slider from "../components/AboutUs/Slider";
+import Advantages from "../components/AboutUs/Advantages";
+import SpaBlog from "../components/SpaBlog";
+import SpaVideoSection from "../components/SpaVideoSection";
 
 const TestimonialsPage = () => {
   return (
@@ -11,11 +15,14 @@ const TestimonialsPage = () => {
         subtitle={"Home / Customer Stories"}
         imgLink={"/img/customerStories/Hero.svg"}
       />
-            <SpaGallerySection />
-            <BookAppointment />
-
+      <SpaGallerySection />
+      <Advantages pageType={"customerStory"}/>
+      <Slider type={"customerStories"}/>
+      <SpaBlog pageType={"customerStories"}/>
+      <SpaVideoSection pageType={"CustomerStories"}/>
+      <BookAppointment />
     </>
-  )
-}
+  );
+};
 
-export default TestimonialsPage
+export default TestimonialsPage;

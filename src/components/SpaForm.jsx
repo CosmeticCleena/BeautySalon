@@ -3,11 +3,11 @@ import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 import CallIcon from "/img/Call-Icon.svg";
 const SpaForm = () => {
   return (
-    <div className="w-full flex justify-center gap-12 py-24">
-      <div className="flex flex-col items-start gap-8">
+    <div className="w-full flex flex-col md:flex-row justify-center gap-12 py-24">
+      <div className="flex flex-col items-center md:items-start gap-8">
         <h2 className="text-[44px]">Make Appointment</h2>
         <img src={FlowerUnderHeader} alt="" />
-        <p className="max-w-[500px]">
+        <p className="max-w-[500px] text-center md:text-left">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </p>
@@ -19,7 +19,7 @@ const SpaForm = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 w-[830px] gap-5">
+      <div className="grid md:grid-cols-2 w-full md:w-[830px] gap-5 px-4">
         <div className="grid gap-5">
           <input
             type="text"
@@ -36,13 +36,13 @@ const SpaForm = () => {
             placeholder="Enter Date*"
             className="border border-[#D8D8D8] focus:border-[#D1AE62] p-3 placeholder:px-1"
           />
-          <button className="bg-[#D4AF37] text-white px-6 py-3">
+          <button className="hidden md:block bg-[#D4AF37] text-white px-6 py-3">
             Book Appointment
           </button>
         </div>
         <div className="grid grid-rows-4 gap-5">
           <select
-            className="border border-[#D8D8D8] focus:border-[#D1AE62] p-3 placeholder:px-4 row-span-1"
+            className=" border border-[#D8D8D8] focus:border-[#D1AE62] p-3 placeholder:px-4 row-span-1"
             defaultValue=""
           >
             <option value="" disabled>
@@ -57,6 +57,9 @@ const SpaForm = () => {
             className="border border-[#D8D8D8] focus:border-[#D1AE62] p-3 placeholder:px-1 row-span-2"
             placeholder="Your Message*"
           ></textarea>
+          <button className="block md:hidden bg-[#D4AF37] text-white px-6 py-3">
+            Book Appointment
+          </button>
           <div className="flex items-center justify-center h-full">
             <p className="text-gray-600">
               Your privacy is our priority; we never collect personal data
