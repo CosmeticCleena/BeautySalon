@@ -11,9 +11,9 @@ const SpaForm = () => {
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </p>
-        <div className="flex bg-[#FFF7F4] p-4 md:p-5 gap-3 md:gap-5 w-full md:w-auto">
+        <div className="flex bg-[#FFF7F4] p-4 md:p-5 gap-3 md:gap-5 w-full md:w-auto justify-center md:justify-start">
           <img src={CallIcon} alt="Phone" className="w-10 h-10 md:w-auto md:h-auto" />
-          <div className="flex flex-col justify-center items-start">
+          <div className="flex flex-col justify-center items-center">
             <p className="text-[16px] md:text-[18px] lg:text-[20px] font-medium">Phone Appointment</p>
             <p className="text-[18px] md:text-[20px] lg:text-[24px] font-bold">+ 00 12345 67890</p>
           </div>
