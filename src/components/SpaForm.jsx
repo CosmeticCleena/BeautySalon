@@ -83,15 +83,15 @@ const SpaForm = ({ display }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (validateForm()) {
       setIsSubmitting(true);
       
       emailjs.sendForm(
-        'service_vh97ak4', 
-        'template_2i137in', 
+        import.meta.env.VITE_SERVICE_ID, 
+        import.meta.env.VITE_TEMPLATE_ID, 
         formRef.current, 
-        '6HRMRco3MIH9eDGaZ'
+        import.meta.env.VITE_API_KEY
       )
       .then((result) => {
         setSubmitStatus({
