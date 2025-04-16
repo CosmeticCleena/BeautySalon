@@ -1,10 +1,16 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React, {useEffect} from "react";
+import { Outlet ,useLocation } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import BackGround from "/img/BackGround.svg";
 import Footer from "./components/Footer";
 
 function App() {
+  const location = useLocation();
+
+  // Cuộn lên đầu trang mỗi khi URL thay đổi
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   return (
     <>
       <NavBar />

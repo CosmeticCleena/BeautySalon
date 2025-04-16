@@ -25,7 +25,7 @@ const HomePage = () => {
       <SpaVideoSection pageType={"HomePage"}/>
       <SpaExpertTeam pt={"pt-[400px]"}/>
       <SpaAchievement />
-      <SpaForm />
+      <SpaForm display={"flex"}/>
       <SpaBlog pageType={"blog"}/>
     </>
   );

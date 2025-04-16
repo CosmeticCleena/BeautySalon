@@ -1,28 +1,10 @@
 import React, { useState } from "react";
 import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 import { contactInfo } from "../../data/contactInfo";
+import SpaForm from "../../components/SpaForm";
 
 const GetInTouch = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phoneNumber: "",
-    message: ""
-  });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Add your form submission logic here
-  };
 
   return (
     <div className="pt-20">
@@ -70,86 +52,7 @@ const GetInTouch = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-
-        {/* Contact Form Section */}
-        <div className="flex-grow p-6 lg:p-12 bg-white">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="flex flex-col md:flex-row gap-4 w-full">
-              <div className="w-full md:w-1/2">
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name</label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#D1AE62] focus:border-[#D1AE62]"
-                  placeholder="Eleanor"
-                />
-              </div>
-              <div className="w-full md:w-1/2">
-                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">Last Name</label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#D1AE62] focus:border-[#D1AE62]"
-                  placeholder="Edwards"
-                />
-              </div>
-            </div>
-            
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#D1AE62] focus:border-[#D1AE62]"
-                placeholder="glamspot@example.com"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">Phone Number</label>
-              <input
-                type="tel"
-                id="phoneNumber"
-                name="phoneNumber"
-                value={formData.phoneNumber}
-                onChange={handleChange}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#D1AE62] focus:border-[#D1AE62]"
-                placeholder="(308) 555-0121"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">Enter Messages</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={6}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#D1AE62] focus:border-[#D1AE62]"
-                placeholder="Aliquam porta nisl dolor, molestie pellentesque elit molestie in. Morbi metus neque, elementum ultam in a laoreet purus..."
-              />
-            </div>
-            
-            <div>
-              <button
-                type="submit"
-                className="w-full md:w-auto bg-[#D1AE62] hover:bg-[#D1B76E] text-white py-3 px-8 transition-colors rounded-md"
-              >
-                Send Messages
-              </button>
-            </div>
-          </form>
-        </div>
+        <SpaForm display={"hidden"} />
       </div>
     </div>
   );

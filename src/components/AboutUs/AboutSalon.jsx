@@ -11,7 +11,7 @@ const AboutSalon = () => {
           alt="Salon interior"
           className="w-[260px] sm:w-[280px] md:w-[320px] h-auto"
         />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/4 sm:-translate-x-1/3 lg:-translate-x-1/2 translate-y-0 w-[180px] sm:w-[200px] md:w-[240px] h-auto aspect-[4/5]">
+        <div className="absolute top-1/2 left-1/2 md:left-0 transform -translate-x-1/4 sm:-translate-x-1/3 lg:-translate-x-1/2 translate-y-0 w-[180px] sm:w-[200px] md:w-[240px] h-auto aspect-[4/5]">
           <img
             src="/img/aboutUs/AboutTinyImg.svg"
             alt="Treatment detail"

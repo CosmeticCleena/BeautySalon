@@ -9,7 +9,7 @@ export const newsItems = [
     comments: 24,
     author: {
       name: "Daniel Charence",
-      image: "/img/avatars/avatar-1.jpg",
+      image: "/img/avt.svg",
       role: "Senior Hair Stylist"
     },
     publishedDate: "June 24, 2024",
@@ -74,7 +74,7 @@ export const newsItems = [
     comments: 18,
     author: {
       name: "Emma Roberts",
-      image: "/img/avatars/avatar-2.jpg",
+      image: "/img/avt.svg",
       role: "Wellness Specialist"
     },
     publishedDate: "June 20, 2024",
@@ -136,7 +136,7 @@ export const newsItems = [
     comments: 32,
     author: {
       name: "Dr. Sarah Johnson",
-      image: "/img/avatars/avatar-3.jpg",
+      image: "/img/avt.svg",
       role: "Dermatologist"
     },
     publishedDate: "June 17, 2024",
@@ -197,7 +197,7 @@ export const newsItems = [
     comments: 29,
     author: {
       name: "Jennifer Matthews",
-      image: "/img/avatars/avatar-4.jpg",
+      image: "/img/avt.svg",
       role: "Color Specialist"
     },
     publishedDate: "June 15, 2024",
@@ -251,7 +251,7 @@ export const newsItems = [
     comments: 22,
     author: {
       name: "Maya Williams",
-      image: "/img/avatars/avatar-5.jpg",
+      image: "/img/avt.svg",
       role: "Holistic Beauty Expert"
     },
     publishedDate: "June 10, 2024",
@@ -297,7 +297,7 @@ export const newsItems = [
     comments: 17,
     author: {
       name: "Robert Chen",
-      image: "/img/avatars/avatar-6.jpg",
+      image: "/img/avt.svg",
       role: "Nutritionist & Hair Specialist"
     },
     publishedDate: "June 5, 2024",
@@ -359,7 +359,7 @@ export const newsItems = [
     comments: 26,
     author: {
       name: "Aisha Johnson",
-      image: "/img/avatars/avatar-7.jpg",
+      image: "/img/avt.svg",
       role: "Organic Skincare Specialist"
     },
     publishedDate: "June 1, 2024",
@@ -416,7 +416,7 @@ export const newsItems = [
     comments: 31,
     author: {
       name: "Dr. Michael Thompson",
-      image: "/img/avatars/avatar-8.jpg",
+      image: "/img/avt.svg",
       role: "Cosmetic Scientist"
     },
     publishedDate: "May 28, 2024",
@@ -482,7 +482,7 @@ export const newsItems = [
     comments: 14,
     author: {
       name: "Jessica Parker",
-      image: "/img/avatars/avatar-1.jpg",
+      image: "/img/avt.svg",
       role: "Hair Care Expert"
     },
     publishedDate: "May 25, 2024",
@@ -543,7 +543,7 @@ export const newsItems = [
     comments: 19,
     author: {
       name: "Thomas Rivera",
-      image: "/img/avatars/avatar-2.jpg",
+      image: "/img/avt.svg",
       role: "Massage Therapist"
     },
     publishedDate: "May 20, 2024",
@@ -606,7 +606,7 @@ export const newsItems = [
     comments: 38,
     author: {
       name: "Dr. Emily Wong",
-      image: "/img/avatars/avatar-3.jpg",
+      image: "/img/avt.svg",
       role: "Skincare Specialist"
     },
     publishedDate: "May 15, 2024",
@@ -666,7 +666,7 @@ export const newsItems = [
     comments: 23,
     author: {
       name: "Olivia Bennett",
-      image: "/img/avatars/avatar-4.jpg",
+      image: "/img/avt.svg",
       role: "Esthetician"
     },
     publishedDate: "May 10, 2024",
@@ -728,7 +728,7 @@ export const newsItems = [
     comments: 29,
     author: {
       name: "Dr. James Wilson",
-      image: "/img/avatars/avatar-5.jpg",
+      image: "/img/avt.svg",
       role: "Dermatology Researcher"
     },
     publishedDate: "May 5, 2024",
@@ -788,7 +788,7 @@ export const newsItems = [
     comments: 16,
     author: {
       name: "Sophia Garcia",
-      image: "/img/avatars/avatar-6.jpg",
+      image: "/img/avt.svg",
       role: "Natural Skincare Formulator"
     },
     publishedDate: "May 1, 2024",
@@ -851,7 +851,7 @@ export const newsItems = [
     comments: 24,
     author: {
       name: "Dr. Alexander Kim",
-      image: "/img/avatars/avatar-7.jpg",
+      image: "/img/avt.svg",
       role: "Environmental Dermatologist"
     },
     publishedDate: "April 25, 2024",
@@ -915,7 +915,7 @@ export const newsItems = [
     comments: 27,
     author: {
       name: "Mia Rodriguez",
-      image: "/img/avatars/avatar-8.jpg",
+      image: "/img/avt.svg",
       role: "Brow Artist"
     },
     publishedDate: "April 20, 2024",
@@ -978,7 +978,7 @@ export const newsItems = [
     comments: 31,
     author: {
       name: "Natalie Kim",
-      image: "/img/avatars/avatar-1.jpg",
+      image: "/img/avt.svg",
       role: "Celebrity Nail Artist"
     },
     publishedDate: "April 15, 2024",
@@ -1039,7 +1039,7 @@ export const newsItems = [
     comments: 22,
     author: {
       name: "Amanda Lewis",
-      image: "/img/avatars/avatar-2.jpg",
+      image: "/img/avt.svg",
       role: "Body Treatment Specialist"
     },
     publishedDate: "April 10, 2024",
@@ -1106,7 +1106,7 @@ export const newsItems = [
     comments: 33,
     author: {
       name: "Carlos Mendez",
-      image: "/img/avatars/avatar-3.jpg",
+      image: "/img/avt.svg",
       role: "Celebrity Hair Colorist"
     },
     publishedDate: "April 5, 2024",
@@ -1171,7 +1171,7 @@ export const newsItems = [
     comments: 36,
     author: {
       name: "Dr. Rebecca Taylor",
-      image: "/img/avatars/avatar-4.jpg",
+      image: "/img/avt.svg",
       role: "Cosmetic Dermatologist"
     },
     publishedDate: "April 1, 2024",

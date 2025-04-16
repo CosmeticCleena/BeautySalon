@@ -6,6 +6,7 @@ import Slider from "../components/AboutUs/Slider";
 import Advantages from "../components/AboutUs/Advantages";
 import SpaBlog from "../components/SpaBlog";
 import SpaVideoSection from "../components/SpaVideoSection";
+import SpaForm from "../components/SpaForm";
 
 const TestimonialsPage = () => {
   return (
@@ -20,7 +21,7 @@ const TestimonialsPage = () => {
       <Slider type={"customerStories"}/>
       <SpaBlog pageType={"customerStories"}/>
       <SpaVideoSection pageType={"CustomerStories"}/>
-      <BookAppointment />
+      <SpaForm display={"flex"}/>
     </>
   );
 };

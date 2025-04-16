@@ -4,10 +4,12 @@ import SeachIcon from "/img/Search-Icon.svg";
 import CartIcon from "/img/Cart-Icon.svg";
 import UserIcon from "/img/User-Icon.svg";
 import NavLink from "./NavLink";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -21,7 +23,6 @@ const NavBar = () => {
     };
     
     const handleScroll = () => {
-      // Chỉ kiểm tra vị trí cuộn cơ bản
       if (window.scrollY > 50) {
         setScrolled(true);
       } else {
@@ -33,7 +34,7 @@ const NavBar = () => {
     window.addEventListener('scroll', handleScroll);
     
     handleResize();
-    handleScroll(); // Kiểm tra vị trí cuộn ban đầu
+    handleScroll(); 
     
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -41,7 +42,6 @@ const NavBar = () => {
     };
   }, []);
 
-  // Xác định màu chữ cho các liên kết
   const textColor = scrolled ? 'text-gray-800' : 'text-white';
 
   return (
@@ -52,28 +52,28 @@ const NavBar = () => {
   ${!scrolled ? 'md:bg-transparent md:shadow-none' : ''}
   ${scrolled ? 'md:shadow-lg' : ''}
 `}>
-        <div className="flex items-center">
-          <img 
-            src={logo}
-            alt="Logo" 
-            className="w-[60px]" 
-          />
-        </div>
-        
-        <div className={`hidden lg:flex gap-12 justify-center items-center text-[18px] leading-[26px] ${textColor}`}>
-          <NavLink to="/" darkMode={!scrolled}>Giới thiệu</NavLink>
-          <NavLink to="/about" darkMode={!scrolled}>Về chúng tôi</NavLink>
-          <NavLink to="/services" darkMode={!scrolled}>Hệ thống dịch vụ</NavLink>
-          <NavLink to="/testimonials" darkMode={!scrolled}>Câu chuyện khách hàng</NavLink>
-          <NavLink to="/news" darkMode={!scrolled}>Tin tức</NavLink>
-          <NavLink to="/contact" darkMode={!scrolled}>Liên hệ</NavLink>
-        </div>
+        <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
+  <img 
+    src={logo}
+    alt="Logo" 
+    className="w-[60px]" 
+  />
+</div>
 
-        <div className={`hidden lg:flex gap-5 justify-center *:w-[24px] *:cursor-pointer text-black`}>
-          <img src={SeachIcon} alt="Search" />
-          <img src={UserIcon} alt="User" />
-          <img src={CartIcon} alt="Cart" />
-        </div>
+<div className={`hidden lg:flex gap-12 justify-center items-center text-[18px] leading-[26px] ${textColor}`}>
+  <NavLink to="/" darkMode={!scrolled}>Giới thiệu</NavLink>
+  <NavLink to="/about" darkMode={!scrolled}>Về chúng tôi</NavLink>
+  <NavLink to="/services" darkMode={!scrolled}>Hệ thống dịch vụ</NavLink>
+  <NavLink to="/testimonials" darkMode={!scrolled}>Câu chuyện khách hàng</NavLink>
+  <NavLink to="/news" darkMode={!scrolled}>Tin tức</NavLink>
+  <NavLink to="/contact" darkMode={!scrolled}>Liên hệ</NavLink>
+</div>
+
+<div className="invisible flex gap-5 justify-center *:w-[24px] *:cursor-pointer text-black">
+  <img src={SeachIcon} alt="Search" />
+  <img src={UserIcon} alt="User" />
+  <img src={CartIcon} alt="Cart" />
+</div>
         
         <div className="flex justify-center items-center lg:hidden cursor-pointer z-35" onClick={toggleSidebar}>
           <img 

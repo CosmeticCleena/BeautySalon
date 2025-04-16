@@ -7,6 +7,8 @@ import SpaPricing from "../components/SpaPricing";
 import InclusivePackages from "../components/OurServices/InclusivePackages";
 import Video from "../components/OurServices/Video";
 import BookAppointment from "../components/OurServices/BookAppointment";
+import SpaForm from "../components/SpaForm";
+
 const ServicesPage = () => {
   return (
     <>
@@ -21,7 +23,7 @@ const ServicesPage = () => {
       <InclusivePackages />
       <SpaPricing />
       <Video />
-      <BookAppointment />
+      <SpaForm display={"flex"}/>
     </>
   );
 };
