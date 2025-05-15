@@ -18,10 +18,10 @@ const ServicesPage = () => {
         imgLink={"/img/ourServices/Hero.svg"}
       />
       <FeatureServices />
-      <SpaExpertTeam pt={"pt-8"} />
-      <LogoBar bgColor={""} />
+      {/* <SpaExpertTeam pt={"pt-8"} /> */}
+      {/* <LogoBar bgColor={""} /> */}
       <InclusivePackages />
-      <SpaPricing />
+      {/* <SpaPricing /> */}
       <Video />
       <SpaForm display={"flex"}/>
     </>

@@ -16,17 +16,17 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <SpaProperties />
+      {/* <SpaProperties /> */}
       <SpaGallerySection />
       <SpaFeatureServices />
-      <LogoBar bgColor={"bg-[#0D0D0D]"}/>
+      {/* <LogoBar bgColor={"bg-[#0D0D0D]"}/> */}
       <SpaAdvantage />
-      <SpaPricing />
+      {/* <SpaPricing /> */}
       <SpaVideoSection pageType={"HomePage"}/>
-      <SpaExpertTeam pt={"pt-[400px]"}/>
+      {/* <SpaExpertTeam pt={"pt-[400px]"}/> */}
       <SpaAchievement />
       <SpaForm display={"flex"}/>
-      <SpaBlog pageType={"blog"}/>
+      {/* <SpaBlog pageType={"blog"}/> */}
     </>
   );
 };

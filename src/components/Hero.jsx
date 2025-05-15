@@ -44,7 +44,7 @@ const Hero = () => {
       onTouchEnd={handleTouchEnd}
     >
       <div className="flex flex-col items-center justify-center h-full px-4 md:px-0">
-        <h1 className="text-white text-[14px] md:text-[16px] font-[600]">
+        {/* <h1 className="text-white text-[14px] md:text-[16px] font-[600]">
           Chào mừng đến với Cleena
         </h1>
         <p className="text-white text-[36px] md:text-[74px] font-[400] max-w-[800px] text-center leading-tight md:leading-normal">
@@ -57,7 +57,7 @@ const Hero = () => {
             before:bg-white before:bg-opacity-50 before:content-[''] before:-z-9 before:top-0 before:left-0"
             onClick={scrollToForm}        >
           Get An Appointment <i className="fa-solid fa-arrow-right"></i>
-        </button>
+        </button> */}
         
         {/* Nút điều hướng - chỉ hiển thị trên màn hình md trở lên */}
         <div className="absolute top-1/2 -translate-y-1/2 w-full hidden md:flex justify-between px-6 lg:px-24 z-20">

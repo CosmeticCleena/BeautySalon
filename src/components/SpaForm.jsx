@@ -155,7 +155,7 @@ const SpaForm = ({ display }) => {
       >
         {/* Phần tiêu đề và thông tin không thay đổi */}
         <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-normal text-center md:text-left">
-          Make Appointment
+          Đặt lịch hẹn
         </h2>
         <img
           src={FlowerUnderHeader}
@@ -177,7 +177,7 @@ const SpaForm = ({ display }) => {
               Phone Appointment
             </p>
             <p className="text-[18px] md:text-[20px] lg:text-[24px] font-bold">
-              + 00 12345 67890
+            +84 988 602 888
             </p>
           </div>
         </div>

@@ -20,7 +20,7 @@ const SpaAdvantage = () => {
           </h2>
           <img src={FlowerUnderHeader} alt="Decorative divider" />
         </div>
-        <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-normal mt-2 md:mt-3">
+        <h2 className="text-[28px] md:text-[26px] lg:text-[30px] font-normal mt-2 md:mt-3">
           {spaAdvantages.title}
         </h2>
         <p className="text-base md:text-lg font-normal">

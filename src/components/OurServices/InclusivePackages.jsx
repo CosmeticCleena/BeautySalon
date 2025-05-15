@@ -13,7 +13,7 @@ const InclusivePackages = () => {
         <img src={FlowerUnderHeader} alt="Decorative element" className="h-5 md:h-auto" />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-16 pt-6 sm:pt-8 md:pt-10 w-full max-w-7xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-16 pt-6 sm:pt-8 md:pt-10 w-full max-w-7xl">
         {packageData.features.map((item) => (
           <FeatureServiceCard key={item.id} service={item} isUsingIcon={true} />
         ))}

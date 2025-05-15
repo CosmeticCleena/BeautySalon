@@ -15,10 +15,10 @@ const AboutPage = () => {
         imgLink={"/img/aboutUs/Hero.svg"}
       />
       <AboutSalon />
-      <LogoBar bgColor={""} />
+      {/* <LogoBar bgColor={""} /> */}
       <Slider type={"aboutUs"}/>
       <Advantages pageType={"aboutPage"}/>
-      <SpaExpertTeam pt={"pt-2"} />
+      {/* <SpaExpertTeam pt={"pt-2"} /> */}
       <Review />
     </>
   );
