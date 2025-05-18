@@ -104,7 +104,7 @@ const SpaBeforeAfter = () => {
         />
       </div>
 
-      <div className="flex items-center gap-6 mb-8 relative w-full max-w-5xl">
+      <div className="flex items-center gap-6 mb-8  w-full max-w-5xl">
         {/* Nút chuyển trang: chỉ hiện trên md trở lên */}
         <button
           onClick={handlePrev}
