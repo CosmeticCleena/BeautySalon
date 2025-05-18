@@ -84,7 +84,7 @@ const SpaBeforeAfter = () => {
           <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </button>
       </div>
-      <p className="text-center text-lg md:text-xl text-gray-700 max-w-3xl">
+      <p className="text-center text-lg md:text-xl text-gray-700 max-w-3xl px-5">
         Hàng trăm khách hàng đã chia sẻ những câu chuyện và tình trạng riêng, tin tưởng đồng hành cùng Adela trên hành trình hoàn thiện ngoại hình của bản thân.
       </p>
     </div>

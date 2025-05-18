@@ -141,7 +141,7 @@
 
 
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import SpaTherapy from "/img/SpaTherapy.svg";
 import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 import spaAdvantagesData from "../data/spaFeedback";
@@ -149,10 +149,52 @@ import spaAdvantagesData from "../data/spaFeedback";
 
 
 const SpaAdvantageSlider = () => {
-  // const [currentIndex, setCurrentIndex] = useState(0);
   const [displayedIndex, setDisplayedIndex] = useState(0);
   const [direction, setDirection] = useState(null); // 'left' | 'right'
   const [animating, setAnimating] = useState(false);
+
+  // Touch state
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
+  // Auto play
+  useEffect(() => {
+    if (animating) return;
+    const timer = setInterval(() => {
+      setDirection('right');
+      setAnimating(true);
+      setTimeout(() => {
+        setDisplayedIndex((prev) => (prev + 1) % spaAdvantagesData.length);
+        setAnimating(false);
+      }, 400);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [animating]);
+
+  // Touch handlers
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const distance = touchStartX.current - touchEndX.current;
+    if (Math.abs(distance) > 50 && !animating) {
+      if (distance > 0) {
+        // Swipe left
+        handleNext();
+      } else {
+        // Swipe right
+        handlePrev();
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
 
   const handleNext = () => {
     if (animating) return;
@@ -178,22 +220,29 @@ const SpaAdvantageSlider = () => {
 
   const currentSpa = spaAdvantagesData[displayedIndex];
 
+  // Animation classes
+  const animationClass = animating
+    ? direction === 'right'
+      ? 'opacity-0 translate-x-16'
+      : 'opacity-0 -translate-x-16'
+    : 'opacity-100 translate-x-0';
+
   return (
     <div className="relative w-full py-16 md:py-20 lg:py-24 px-4 md:px-8">
-      {/* Navigation Controls - Left */}
-      <button 
+      {/* Navigation Controls - Left (hidden on mobile) */}
+      <button
         onClick={handlePrev}
-        className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 bg-[#D1AE62] hover:bg-[#D1B76E] text-white p-2 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-colors shadow-md"
+        className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 bg-[#D1AE62] hover:bg-[#D1B76E] text-white p-2 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-colors shadow-md hidden md:flex"
         disabled={animating}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
-      {/* Navigation Controls - Right */}
-      <button 
+      {/* Navigation Controls - Right (hidden on mobile) */}
+      <button
         onClick={handleNext}
-        className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 bg-[#D1AE62] hover:bg-[#D1B76E] text-white p-2 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-colors shadow-md"
+        className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 bg-[#D1AE62] hover:bg-[#D1B76E] text-white p-2 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-colors shadow-md hidden md:flex"
         disabled={animating}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -202,20 +251,20 @@ const SpaAdvantageSlider = () => {
       </button>
 
       <div className="overflow-hidden flex flex-col items-center gap-20">
-
-      <div className="flex flex-col items-center md:items-start">
-              <h2 className="text-[16px] md:text-[18px] lg:text-[20px] font-medium mb-2 md:mb-3 w-full text-center">
-                Khách Hàng FeedBack
-              </h2>
-              <img src={FlowerUnderHeader} alt="Decorative divider" />
-            </div>
+        <div className="flex flex-col items-center md:items-start">
+          <h2 className="text-[16px] md:text-[18px] lg:text-[20px] font-medium mb-2 md:mb-3 w-full text-center">
+            Khách Hàng FeedBack
+          </h2>
+          <img src={FlowerUnderHeader} alt="Decorative divider" />
+        </div>
         <div
           className={`flex flex-col md:flex-row w-full md:w-4/5 lg:w-3/5 mx-auto justify-center gap-12 md:gap-16 lg:gap-24
             transition-all duration-500 ease-in-out
-            ${animating && direction === 'right' ? 'opacity-0 translate-x-16' : ''}
-            ${animating && direction === 'left' ? 'opacity-0 -translate-x-16' : ''}
-            ${!animating ? 'opacity-100 translate-x-0' : ''}
+            ${animationClass}
           `}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div className="flex-1 flex items-center justify-center">
             <img
@@ -225,35 +274,20 @@ const SpaAdvantageSlider = () => {
             />
           </div>
           <div className="flex flex-col flex-1 gap-6 lg:gap-5 *:text-center *:md:text-start">
-            
             <h2 className="text-[28px] md:text-[26px] lg:text-[30px] font-normal md:mt-3">
               {currentSpa.title}
             </h2>
             <p className="text-base md:text-lg font-normal">
               {currentSpa.description}
             </p>
-            {/* <div className="flex flex-col gap-4 md:gap-5">
-              {currentSpa.benefits.map((advantage, index) => (
-                <div key={index} className="border-b-[1px] border-b-[#D8D8D8]">
-                  <p className="text-[16px] md:text-[18px] lg:text-[20px] font-semibold mb-4 md:mb-5">
-                    {advantage}
-                  </p>
-                </div>
-              ))}
-            </div> */}
-            {/* <div className="flex justify-center md:justify-start w-full mt-2 md:mt-4">
-              <button className="bg-[#D1AE62] hover:bg-[#D1B76E] text-white py-2 md:py-3 px-6 md:px-8 transition-colors text-sm md:text-base">
-                More About Us
-              </button>
-            </div> */}
           </div>
         </div>
       </div>
       {/* Pagination indicator */}
       <div className="flex justify-center gap-2 mt-8">
         {spaAdvantagesData.map((_, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className={`w-3 h-3 rounded-full transition-colors duration-300 ${index === displayedIndex ? 'bg-[#D1AE62]' : 'bg-gray-300'}`}
           />
         ))}
