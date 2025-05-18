@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 
 const images = [
@@ -17,6 +17,49 @@ const SpaBeforeAfter = () => {
   const [animating, setAnimating] = useState(false);
   const [direction, setDirection] = useState("right");
   const totalPages = Math.ceil(images.length / 2);
+
+  // Touch state
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
+  // Auto play
+  useEffect(() => {
+    if (animating) return;
+    const timer = setInterval(() => {
+      setDirection("right");
+      setAnimating(true);
+      setTimeout(() => {
+        setCurrentPage((prev) => (prev === totalPages - 1 ? 0 : prev + 1));
+        setAnimating(false);
+      }, 350);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [animating, totalPages]);
+
+  // Swipe handlers
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const distance = touchStartX.current - touchEndX.current;
+    if (Math.abs(distance) > 50 && !animating) {
+      if (distance > 0) {
+        // Swipe left
+        handleNext();
+      } else {
+        // Swipe right
+        handlePrev();
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
 
   const handlePrev = () => {
     if (animating) return;
@@ -61,10 +104,11 @@ const SpaBeforeAfter = () => {
         />
       </div>
 
-      <div className="flex items-center gap-6 mb-8">
+      <div className="flex items-center gap-6 mb-8 relative w-full max-w-5xl">
+        {/* Nút chuyển trang: chỉ hiện trên md trở lên */}
         <button
           onClick={handlePrev}
-          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#D1AE62] text-white hover:bg-[#D1B76E] transition-colors"
+          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#D1AE62] text-white hover:bg-[#D1B76E] transition-colors hidden md:block"
           disabled={animating}
         >
           <svg
@@ -81,10 +125,13 @@ const SpaBeforeAfter = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
             />
-          </svg>{" "}
+          </svg>
         </button>
         <div
-          className={`grid grid-cols-2 gap-x-6 gap-y-8 w-full max-w-5xl transition-all duration-300 ease-in-out ${animationClass}`}
+          className={`grid grid-cols-2 gap-x-2 gap-y-8 px-5 w-full transition-all duration-300 ease-in-out ${animationClass}`}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {currentImages.map((src, idx) => (
             <div
@@ -101,7 +148,7 @@ const SpaBeforeAfter = () => {
         </div>
         <button
           onClick={handleNext}
-          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#D1AE62] text-white hover:bg-[#D1B76E] transition-colors"
+          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#D1AE62] text-white hover:bg-[#D1B76E] transition-colors hidden md:block"
           disabled={animating}
         >
           <svg
@@ -118,7 +165,7 @@ const SpaBeforeAfter = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
             />
-          </svg>{" "}
+          </svg>
         </button>
       </div>
       <p className="text-center text-lg md:text-xl text-gray-700 max-w-3xl px-5">
