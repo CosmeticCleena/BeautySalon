@@ -5,7 +5,7 @@ import spaAdvantages from "../data/spaTherapy";
 
 const SpaAdvantage = () => {
   return (
-    <div className="flex flex-col md:flex-row w-full md:w-4/5 lg:w-3/5 mx-auto justify-center gap-12 md:gap-16 lg:gap-24 py-16 md:py-20 lg:py-24 px-4 md:px-8">
+    <div className="flex flex-col md:flex-row w-full md:w-4/5 lg:w-3/5 mx-auto justify-center gap-12 md:gap-16 lg:gap-18 py-16 md:py-20 lg:py-24 px-4 md:px-8">
       <div className="flex-1">
         <img 
           src={SpaTherapy} 
@@ -20,7 +20,7 @@ const SpaAdvantage = () => {
           </h2>
           <img src={FlowerUnderHeader} alt="Decorative divider" />
         </div>
-        <h2 className="text-[28px] md:text-[26px] lg:text-[30px] font-normal mt-2 md:mt-3">
+        <h2 className="text-[28px] md:text-[26px] lg:text-[30px] font-normal  md:mt-3">
           {spaAdvantages.title}
         </h2>
         <p className="text-base md:text-lg font-normal">

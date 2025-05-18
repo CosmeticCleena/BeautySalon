@@ -10,16 +10,47 @@ const Footer = () => {
         <div className="flex flex-col gap-6">
           <img
             src={logo}
-            alt=""
+            alt="LEENA"
             className="w-[100px] h-[100px] md:w-[120px] md:h-[120px]"
           />
           <div className="flex flex-col md:flex-row gap-6 cursor-pointer">
-          <span className="text-white hover:text-primary-300">Giới thiệu</span>
-          <span className="text-white hover:text-primary-300">Về chúng tôi</span>
-          <span className="text-white hover:text-primary-300">Hệ thống dịch vụ</span>
-          <span className="text-white hover:text-primary-300">Câu chuyện khách hàng</span>
-          <span className="text-white hover:text-primary-300">Tin tức</span>
-          <span className="text-white hover:text-primary-300">Liên hệ</span>
+            <span className="text-white hover:text-primary-300">
+              Giới thiệu
+            </span>
+            <span className="text-white hover:text-primary-300">
+              Về chúng tôi
+            </span>
+            <span className="text-white hover:text-primary-300">
+              Hệ thống dịch vụ
+            </span>
+            <span className="text-white hover:text-primary-300">
+              Câu chuyện khách hàng
+            </span>
+            <span className="text-white hover:text-primary-300">Tin tức</span>
+            <span className="text-white hover:text-primary-300">Liên hệ</span>
+          </div>
+          
+          {/* Contact Information */}
+          <div className="flex flex-col gap-3 mt-2">
+            <div className="flex items-center gap-2">
+              <i className="fas fa-map-marker-alt text-[#D1AE62] min-w-[20px]"></i>
+              <span className="text-sm text-gray-300">150 Nguyễn Sơn, Long Biên, Hà Nội</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <i className="fas fa-phone text-[#D1AE62] min-w-[20px]"></i>
+              <span className="text-sm text-gray-300">Hotline: +84 988 602 888</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <i className="fab fa-facebook text-[#D1AE62] min-w-[20px]"></i>
+              <a
+                href="https://www.facebook.com/ThammyCLEENA?locale=vi_VN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-[#D1AE62] hover:underline"
+              >
+                facebook.com/ThammyCLEENA
+              </a>
+            </div>
           </div>
         </div>
         <div className="flex flex-col justify-between gap-8">
@@ -46,7 +77,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full mt-10 pt-10 border-t-[0.5px] border-t-[#6A6A6A]">
+      
+      <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full mt-10 pt-6 border-t-[0.5px] border-t-[#6A6A6A]">
         <div className="flex gap-5">
           <span className="text-white hover:text-primary-300">Terms</span>
           <span className="text-white hover:text-primary-300">Policy</span>

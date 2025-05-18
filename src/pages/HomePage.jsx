@@ -11,7 +11,7 @@ import SpaExpertTeam from "../components/SpaExpertTeam";
 import SpaAchievement from "../components/SpaAchievement";
 import SpaForm from "../components/SpaForm";
 import SpaBlog from "../components/SpaBlog";
-
+import SpaBeforeAfter from "../components/SpaBeforeAfter";
 const HomePage = () => {
   return (
     <>
@@ -25,6 +25,7 @@ const HomePage = () => {
       <SpaVideoSection pageType={"HomePage"}/>
       {/* <SpaExpertTeam pt={"pt-[400px]"}/> */}
       <SpaAchievement />
+      <SpaBeforeAfter/>
       <SpaForm display={"flex"}/>
       {/* <SpaBlog pageType={"blog"}/> */}
     </>

@@ -1,23 +1,33 @@
-const spaFeedback = {
-  "HomePage":{
-    title:"Satisfied Customers",
-    comment:[
-      { name: "Anna Thompson", feedback: "Absolutely loved my spa experience! The staff was very professional and the atmosphere was so relaxing. From the moment I walked in, I felt welcomed and at ease. The treatment was incredibly soothing, and I left feeling refreshed and rejuvenated. Highly recommend to anyone looking for a top-tier spa experience!" },
-      { name: "Michael Roberts", feedback: "This was my first time visiting, and I must say it exceeded my expectations. The ambiance was perfect, the staff was attentive, and the service was flawless. I tried a full-body massage, and it was the most relaxing experience I've had in a long time. Can't wait to return!" },
-      { name: "Sophia Martinez", feedback: "Great service and a wonderful ambiance. The massage therapy was exactly what I needed after a stressful week. The therapist was highly skilled, ensuring every tension in my body was relieved. The spa's use of organic products made a huge difference in how my skin felt afterward." },
-      { name: "James Wilson", feedback: "I feel so refreshed and rejuvenated after my facial treatment. The products used were gentle and left my skin feeling soft and glowing. The esthetician took the time to understand my skin type and recommended the perfect treatment. I will definitely be coming back for more sessions!" },
-      { name: "Emily Davis", feedback: "Hands down the best spa treatment I've had in a long time. The organic products make a difference, and I could instantly feel the benefits. The staff was warm and welcoming, ensuring a top-notch experience. If you're looking for a place to unwind and truly relax, this is it!" }
-    ]
+const spaAdvantagesData = [
+  {
+    title: "Jack",
+    description: "Da mình từng bị nám nhẹ sau sinh, đi nhiều nơi không hiệu quả. Được bạn giới thiệu đến Cleena, mình thật sự bất ngờ vì sau 4 buổi điều trị, tình trạng cải thiện rõ rệt. Các bạn kỹ thuật viên rất nhẹ nhàng, tư vấn kỹ lưỡng và máy móc thì hiện đại lắm. Giờ mỗi lần ra đường mình tự tin hẳn.",
+    image: "/img/feedBack/jack1.jpeg"
   },
-  "CustomerStories":{
-    title:"How will customers change?",
-    comment:[
-      { name: "Anna Thompson", feedback: "Absolutely loved my spa experience! The staff was very professional and the atmosphere was so relaxing. From the moment I walked in, I felt welcomed and at ease. The treatment was incredibly soothing, and I left feeling refreshed and rejuvenated. Highly recommend to anyone looking for a top-tier spa experience!" },
-      { name: "Michael Roberts", feedback: "This was my first time visiting, and I must say it exceeded my expectations. The ambiance was perfect, the staff was attentive, and the service was flawless. I tried a full-body massage, and it was the most relaxing experience I've had in a long time. Can't wait to return!" },
-      { name: "Sophia Martinez", feedback: "Great service and a wonderful ambiance. The massage therapy was exactly what I needed after a stressful week. The therapist was highly skilled, ensuring every tension in my body was relieved. The spa's use of organic products made a huge difference in how my skin felt afterward." },
-      { name: "James Wilson", feedback: "I feel so refreshed and rejuvenated after my facial treatment. The products used were gentle and left my skin feeling soft and glowing. The esthetician took the time to understand my skin type and recommended the perfect treatment. I will definitely be coming back for more sessions!" },
-      { name: "Emily Davis", feedback: "Hands down the best spa treatment I've had in a long time. The organic products make a difference, and I could instantly feel the benefits. The staff was warm and welcoming, ensuring a top-notch experience. If you're looking for a place to unwind and truly relax, this is it!" }
-    ]
+  {
+    title: "J97",
+    description: "Mình rất thích không gian ở Cleena – vừa sang trọng vừa ấm cúng. Dịch vụ chăm sóc da chuyên sâu ở đây khiến mình cảm thấy thư giãn tuyệt đối sau giờ làm. Da mịn màng hơn rõ rệt sau vài buổi. Mỗi lần đến Cleena giống như đi 'hẹn hò với bản thân vậy",
+
+    image: "/img/feedBack/jack2.jpeg"
+  },
+  {
+    title: "Trịnh Trần Phương Tuấn",
+    description: "Cô lớn tuổi rồi nên rất cẩn thận khi chọn nơi chăm sóc da. Cleena khiến cô yên tâm ngay từ buổi đầu nhờ quy trình chuyên nghiệp và thái độ tận tình. Sau khi trẻ hóa bằng công nghệ mới, bạn bè ai cũng khen cô trẻ ra vài tuổi",
+
+    image: "/img/feedBack/jack3.jpeg"
+  },
+  {
+    title: "Meo Meo",
+    description: "Lúc đầu cũng hơi ngại đến spa vì nghĩ là chỉ dành cho nữ, nhưng Cleena có dịch vụ riêng cho nam nên mình thử. Sau buổi làm sạch sâu và phục hồi da, mình thấy da sáng hơn, bớt dầu và mụn ẩn rõ luôn. Nhân viên cực kỳ tôn trọng khách, tạo cảm giác rất chuyên nghiệp",
+
+    image: "/img/feedBack/jack4.jpeg"
+  },
+  {
+    title: "Sol's papa",
+    description: "Điều mình ấn tượng nhất ở Cleena là đội ngũ nhân viên rất có tâm, luôn lắng nghe và điều chỉnh dịch vụ theo đúng nhu cầu da mình. Họ không chỉ làm dịch vụ mà còn hướng dẫn mình chăm da tại nhà rất tận tình. Đây sẽ là nơi gắn bó dài lâu của mình.",
+
+    image: "/img/feedBack/jack5.jpeg"
   }
-} ;
-export default spaFeedback;
+];
+
+export default spaAdvantagesData;
