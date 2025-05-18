@@ -6,7 +6,7 @@
 //   const [feedbackIndex, setFeedbackIndex] = useState(0);
 //   const [touchStart, setTouchStart] = useState(null);
 //   const [touchEnd, setTouchEnd] = useState(null);
-  
+
 //   // Minimum swipe distance (in px)
 //   const minSwipeDistance = 50;
 
@@ -33,11 +33,11 @@
 
 //   const onTouchEnd = () => {
 //     if (!touchStart || !touchEnd) return;
-    
+
 //     const distance = touchStart - touchEnd;
 //     const isLeftSwipe = distance > minSwipeDistance;
 //     const isRightSwipe = distance < -minSwipeDistance;
-    
+
 //     if (isLeftSwipe) {
 //       nextFeedback();
 //     } else if (isRightSwipe) {
@@ -74,14 +74,14 @@
 //         <source src="/172687-849651731.mp4" type="video/mp4" />
 //         Your browser does not support the video tag.
 //       </video>
-//       <div 
+//       <div
 //         className="md:absolute md:top-full md:left-1/2 w-full md:w-2/3 transform md:-translate-x-1/2 md:-translate-y-1/2 bg-white text-[36px] font-bold z-10 border-[1px] border-[#D8D8D8] text-center shadow-md"
 //       >
 //         <div className="flex flex-col items-center gap-5 mt-12 md:mt-16">
 //           <h2 className="text-[32px] md:text-[44px] font-normal">{spaFeedback[pageType].title}</h2>
 //           <img src={FlowerUnderHeader} alt="" />
 //         </div>
-//         <div 
+//         <div
 //           className="flex justify-center gap-5 my-12 md:my-16 text-[#6A6A6A] items-center"
 //           onTouchStart={onTouchStart}
 //           onTouchMove={onTouchMove}
@@ -97,7 +97,7 @@
 //           >
 //             Prev
 //           </button>
-          
+
 //           <div className="flex flex-col items-center gap-6 md:gap-8 px-4 md:px-0">
 //             <p className="text-[16px] sm:text-[18px] md:text-[20px] font-normal">
 //               {spaFeedback[pageType].comment[feedbackIndex].feedback}
@@ -105,11 +105,11 @@
 //             <p className="text-[#D1AE62] text-[18px] sm:text-[20px] md:text-[22px]">
 //               {spaFeedback[pageType].comment[feedbackIndex].name}
 //             </p>
-            
+
 //             {/* Mobile-only indicator dots */}
 //             <div className="flex gap-2 md:hidden">
 //               {spaFeedback[pageType].comment.map((_, index) => (
-//                 <button 
+//                 <button
 //                   key={index}
 //                   onClick={() => setFeedbackIndex(index)}
 //                   className={`w-2 h-2 rounded-full ${
@@ -139,14 +139,11 @@
 
 // export default SpaVideoSection;
 
-
-
 import React, { useState, useRef, useEffect } from "react";
 import SpaTherapy from "/img/SpaTherapy.svg";
 import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 import spaAdvantagesData from "../data/spaFeedback";
 // Giả lập dữ liệu cho 5 bài viết spa
-
 
 const SpaAdvantageSlider = () => {
   const [displayedIndex, setDisplayedIndex] = useState(0);
@@ -161,7 +158,7 @@ const SpaAdvantageSlider = () => {
   useEffect(() => {
     if (animating) return;
     const timer = setInterval(() => {
-      setDirection('right');
+      setDirection("right");
       setAnimating(true);
       setTimeout(() => {
         setDisplayedIndex((prev) => (prev + 1) % spaAdvantagesData.length);
@@ -222,10 +219,10 @@ const SpaAdvantageSlider = () => {
 
   // Animation classes
   const animationClass = animating
-    ? direction === 'right'
-      ? 'opacity-0 translate-x-16'
-      : 'opacity-0 -translate-x-16'
-    : 'opacity-100 translate-x-0';
+    ? direction === "right"
+      ? "opacity-0 translate-x-16"
+      : "opacity-0 -translate-x-16"
+    : "opacity-100 translate-x-0";
 
   return (
     <div className="relative w-full py-16 md:py-20 lg:py-24 px-4 md:px-8">
@@ -235,8 +232,20 @@ const SpaAdvantageSlider = () => {
         className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 bg-[#D1AE62] hover:bg-[#D1B76E] text-white p-2 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-colors shadow-md hidden md:flex"
         disabled={animating}
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 18L9 12L15 6"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       </button>
       {/* Navigation Controls - Right (hidden on mobile) */}
@@ -245,8 +254,20 @@ const SpaAdvantageSlider = () => {
         className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 bg-[#D1AE62] hover:bg-[#D1B76E] text-white p-2 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-colors shadow-md hidden md:flex"
         disabled={animating}
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 6L15 12L9 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9 6L15 12L9 18"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       </button>
 
@@ -288,7 +309,9 @@ const SpaAdvantageSlider = () => {
         {spaAdvantagesData.map((_, index) => (
           <div
             key={index}
-            className={`w-3 h-3 rounded-full transition-colors duration-300 ${index === displayedIndex ? 'bg-[#D1AE62]' : 'bg-gray-300'}`}
+            className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+              index === displayedIndex ? "bg-[#D1AE62]" : "bg-gray-300"
+            }`}
           />
         ))}
       </div>
