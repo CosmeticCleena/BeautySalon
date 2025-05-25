@@ -3,7 +3,7 @@ import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 
 const Review = () => {
   return (
-    <div className="flex flex-col justify-center py-10 md:py-16 lg:mb-24 gap-8 md:gap-10 px-4 sm:px-6 md:px-8">
+    <div className="flex flex-col justify-center py-10 md:py-16  gap-8 md:gap-10 px-4 sm:px-6 md:px-8">
       <div className="flex flex-col-reverse lg:flex-row justify-center gap-8 md:gap-10 lg:gap-12 mb-8 md:mb-10">
         {/* Testimonial Cards */}
         <div className="flex flex-col gap-5 md:gap-6 w-full lg:w-auto order-2 lg:order-1">
