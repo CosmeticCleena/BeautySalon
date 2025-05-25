@@ -38,7 +38,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-2">
               <i className="fas fa-phone text-[#D1AE62] min-w-[20px]"></i>
-              <span className="text-sm text-gray-300">Hotline: +84 988 602 888</span>
+              <span className="text-sm text-gray-300">Hotline: 088 886 8856</span>
             </div>
             <div className="flex items-center gap-2">
               <i className="fab fa-facebook text-[#D1AE62] min-w-[20px]"></i>

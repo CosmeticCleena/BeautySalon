@@ -2,21 +2,17 @@ import React, { useState, useRef, useEffect } from "react";
 import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 
 const images = [
+  "/img/beforeAfter/1.png",
   "/img/beforeAfter/jack1.jpeg",
   "/img/beforeAfter/jack2.jpeg",
-  "/img/beforeAfter/jack3.jpeg",
-  "/img/beforeAfter/jack4.jpeg",
-  "/img/beforeAfter/jack5.jpeg",
-  "/img/beforeAfter/jack6.jpeg",
-  "/img/beforeAfter/jack7.jpeg",
-  "/img/beforeAfter/jack8.jpeg",
+
 ];
 
 const SpaBeforeAfter = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [direction, setDirection] = useState("right");
-  const totalPages = Math.ceil(images.length / 2);
+  const totalPages = images.length; // Sửa đổi: mỗi trang hiển thị 1 ảnh
 
   // Touch state
   const touchStartX = useRef(null);
@@ -81,8 +77,8 @@ const SpaBeforeAfter = () => {
     }, 350);
   };
 
-  const startIdx = currentPage * 2;
-  const currentImages = images.slice(startIdx, startIdx + 2);
+  // Lấy ảnh hiện tại: chỉ 1 ảnh
+  const currentImage = images[currentPage];
 
   // Animation classes
   const animationClass = animating
@@ -95,7 +91,7 @@ const SpaBeforeAfter = () => {
     <div className="w-full flex flex-col items-center pt-24 pb-12 relative">
       <div className="flex flex-col text-center justify-center mb-6 md:mb-8 lg:mb-10 gap-4">
         <h2 className="text-[18px] md:text-[20px] font-normal">
-          KHÁCH HÀNG LÀM ĐẸP THÀNH CÔNG{" "}
+          KHÁCH HÀNG LÀM ĐẸP THÀNH CÔNG
         </h2>
         <img
           src={FlowerUnderHeader}
@@ -104,8 +100,8 @@ const SpaBeforeAfter = () => {
         />
       </div>
 
-      <div className="flex items-center gap-6 mb-8  w-full max-w-5xl">
-        {/* Nút chuyển trang: chỉ hiện trên md trở lên */}
+      <div className="flex items-center justify-center gap-6 mb-8 w-full">
+        {/* Nút chuyển trang trái */}
         <button
           onClick={handlePrev}
           className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#D1AE62] text-white hover:bg-[#D1B76E] transition-colors hidden md:block"
@@ -127,25 +123,25 @@ const SpaBeforeAfter = () => {
             />
           </svg>
         </button>
+        
+        {/* Container ảnh - giờ chỉ hiển thị 1 ảnh */}
         <div
-          className={`grid grid-cols-2 gap-x-2 gap-y-8 px-5 w-full transition-all duration-300 ease-in-out ${animationClass}`}
+          className={`flex justify-center px-5 w-full max-w-md transition-all duration-300 ease-in-out ${animationClass}`}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {currentImages.map((src, idx) => (
-            <div
-              key={idx}
-              className="w-full aspect-[3/4] overflow-hidden rounded-lg shadow"
-            >
-              <img
-                src={src}
-                alt={`Khách hàng ${startIdx + idx + 1}`}
-                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-              />
-            </div>
-          ))}
+          <div className="w-full aspect-square max-h-[70vh] overflow-hidden rounded-lg shadow-lg">
+            <img
+
+              src={currentImage}
+              alt={`Khách hàng ${currentPage + 1}`}
+              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            />
+          </div>
         </div>
+        
+        {/* Nút chuyển trang phải */}
         <button
           onClick={handleNext}
           className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#D1AE62] text-white hover:bg-[#D1B76E] transition-colors hidden md:block"
@@ -168,9 +164,30 @@ const SpaBeforeAfter = () => {
           </svg>
         </button>
       </div>
-      <p className="text-center text-lg md:text-xl text-gray-700 max-w-3xl px-5">
+      
+      {/* Chấm pagination để chỉ báo vị trí hiện tại */}
+      <div className="flex justify-center gap-2 mb-5">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => {
+              if (!animating) {
+                setCurrentPage(idx);
+              }
+            }}
+            className={`w-2 h-2 rounded-full transition-all ${
+              idx === currentPage
+                ? "bg-[#D1AE62] w-6"
+                : "bg-gray-300 hover:bg-gray-400"
+            }`}
+            aria-label={`Chuyển đến ảnh ${idx + 1}`}
+          />
+        ))}
+      </div>
+      
+      <p className="text-center text-lg md:text-xl text-gray-700 max-w-3xl px-5 mt-4">
         Hàng trăm khách hàng đã chia sẻ những câu chuyện và tình trạng riêng,
-        tin tưởng đồng hành cùng Adela trên hành trình hoàn thiện ngoại hình của
+        tin tưởng đồng hành cùng CLEENA trên hành trình hoàn thiện ngoại hình của
         bản thân.
       </p>
     </div>

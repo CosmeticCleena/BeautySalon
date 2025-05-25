@@ -25,7 +25,7 @@ const FeatureServiceCard = ({ service, isUsingIcon }) => {
         )}
       </div>
       <h3 className="text-[16px] sm:text-[18px] md:text-[20px] font-semibold">{service.title}</h3>
-      <p className="text-sm sm:text-base text-[#6A6A6A]">{service.description}</p>
+      <p className="text-sm sm:text-base text-[#6A6A6A] h-full">{service.description}</p>
       <div className="flex justify-start w-full mt-1 sm:mt-2 md:mt-3">
         <button className="text-[#D1AE62] text-sm sm:text-base font-semibold transition-colors duration-300 hover:text-[#B89347] flex items-center gap-1 sm:gap-2">
           Khám phá ngay

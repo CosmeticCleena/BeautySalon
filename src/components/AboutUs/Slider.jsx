@@ -1,91 +1,82 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import {images} from "../../data/sliderImages";
+import { images } from "../../data/sliderImages";
 
-export default function ImageSlider({type}) {
+export default function ImageSlider({ type }) {
   const sliderRef = useRef(null);
+  const animationFrameId = useRef(null);
+
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
+  const checkScroll = () => {
+    if (!sliderRef.current) return;
+    const el = sliderRef.current;
+    setShowLeftArrow(el.scrollLeft > 0);
+    setShowRightArrow(
+      el.scrollLeft < el.scrollWidth - el.clientWidth - 10
+    );
+  };
+
   useEffect(() => {
-    const checkScroll = () => {
+    const handleScroll = () => {
       if (!sliderRef.current) return;
-
-      setShowLeftArrow(scrollPosition > 0);
-      setShowRightArrow(
-        scrollPosition <
-          sliderRef.current.scrollWidth - sliderRef.current.clientWidth - 10
-      );
-    };
-
-    checkScroll();
-    
-    // Re-check when window resizes
-    const handleResize = () => {
+      setScrollPosition(sliderRef.current.scrollLeft);
       checkScroll();
     };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [scrollPosition]);
+
+    const throttledScroll = () => {
+      if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
+      animationFrameId.current = requestAnimationFrame(handleScroll);
+    };
+
+    const slider = sliderRef.current;
+    if (slider) {
+      slider.addEventListener("scroll", throttledScroll);
+    }
+
+    checkScroll(); // initial check
+
+    window.addEventListener("resize", checkScroll);
+    return () => {
+      window.removeEventListener("resize", checkScroll);
+      if (slider) slider.removeEventListener("scroll", throttledScroll);
+    };
+  }, []);
 
   const scrollLeft = () => {
     if (!sliderRef.current) return;
-
     const scrollAmount = sliderRef.current.clientWidth;
-    const newPosition = Math.max(0, scrollPosition - scrollAmount);
-
-    sliderRef.current.scrollTo({
-      left: newPosition,
-      behavior: "smooth",
-    });
-    setScrollPosition(newPosition);
+    const newPosition = Math.max(0, sliderRef.current.scrollLeft - scrollAmount);
+    sliderRef.current.scrollTo({ left: newPosition, behavior: "smooth" });
   };
 
   const scrollRight = () => {
     if (!sliderRef.current) return;
-
     const scrollAmount = sliderRef.current.clientWidth;
-    const newPosition = scrollPosition + scrollAmount;
-
-    sliderRef.current.scrollTo({
-      left: newPosition,
-      behavior: "smooth",
-    });
-    setScrollPosition(newPosition);
+    const newPosition = sliderRef.current.scrollLeft + scrollAmount;
+    sliderRef.current.scrollTo({ left: newPosition, behavior: "smooth" });
   };
 
-  const handleScroll = (e) => {
-    setScrollPosition(e.target.scrollLeft);
-  };
-
-  // Enhanced touch controls
+  // Touch controls
   const handleTouchStart = (e) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
-  
+
   const handleTouchMove = (e) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
-  
+
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-    
-    if (isLeftSwipe) {
-      scrollRight();
-    }
-    
-    if (isRightSwipe) {
-      scrollLeft();
-    }
+    if (distance > 50) scrollRight();
+    if (distance < -50) scrollLeft();
   };
 
   return (
@@ -98,7 +89,6 @@ export default function ImageSlider({type}) {
           msOverflowStyle: "none",
           WebkitOverflowScrolling: "touch",
         }}
-        onScroll={handleScroll}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -110,15 +100,15 @@ export default function ImageSlider({type}) {
         `}</style>
 
         {images[type].map((image, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="w-4/5 sm:w-2/4 md:w-1/3 lg:w-1/4 xl:w-1/5 flex-shrink-0 px-1 sm:px-2"
           >
             <img
               src={image}
               alt={`Spa service ${index + 1}`}
-              className="w-full h-48 sm:h-56 md:h-64 object-cover rounded shadow-sm"
               loading="lazy"
+              className="w-full h-48 sm:h-56 md:h-64 object-cover rounded shadow-sm"
             />
           </div>
         ))}

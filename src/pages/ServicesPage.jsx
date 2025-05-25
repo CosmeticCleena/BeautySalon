@@ -22,7 +22,7 @@ const ServicesPage = () => {
       {/* <LogoBar bgColor={""} /> */}
       <InclusivePackages />
       {/* <SpaPricing /> */}
-      <Video />
+      {/* <Video /> */}
       <SpaForm display={"flex"}/>
     </>
   );

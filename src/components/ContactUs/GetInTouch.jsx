@@ -1,40 +1,67 @@
-import React, { useState } from "react";
+import React from "react";
 import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 import { contactInfo } from "../../data/contactInfo";
 import SpaForm from "../../components/SpaForm";
 
 const GetInTouch = () => {
+   const isUrl = (text) => {
+    try {
+      const url = new URL(text);
+      return url.protocol === "http:" || url.protocol === "https:";
+    } catch {
+      return false;
+    }
+  };
 
+  // Hàm kiểm tra xem text có phải email không
+  const isEmail = (text) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text);
+  };
 
   return (
     <div className="pt-20">
       <div className="flex flex-col items-center gap-4">
         <h2 className="text-[44px] md:text-[36px] sm:text-[30px] font-medium mb-2 text-center px-4">
-          Get in Touch with Our Team.
+          Liên hệ với chúng tôi
         </h2>
         <img src={FlowerUnderHeader} alt="" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
         {contactInfo.map((item, index) => (
           <div
             key={index}
             className="flex flex-col bg-[#FFF7F4] p-5 md:p-6 lg:p-8 gap-3 md:gap-4 
-                      cursor-pointer hover:scale-105 transition-all duration-300 
-                      ease-in-out rounded-lg shadow-lg"
+                       cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out 
+                       rounded-lg shadow-lg min-h-[300px]"
           >
             <img
               src={item.image}
-              alt=""
+              alt={`${item.title} icon`}
               className="h-[60px] w-[60px] md:h-[70px] md:w-[70px] lg:h-[80px] lg:w-[80px]"
             />
             <h2 className="text-[20px] md:text-[22px] lg:text-[24px] font-bold break-words">
               {item.title}
             </h2>
-            <p className="text-[16px] md:text-[18px] lg:text-[20px] font-medium break-words">
+            <p className="text-[16px] md:text-[18px] lg:text-[20px] font-medium break-words flex-grow">
               {item.description}
             </p>
-            <p className="text-[16px] md:text-[18px] lg:text-[20px] font-medium break-words overflow-wrap-anywhere">
-              {item.contact}
+            <p className="text-[16px] md:text-[18px] lg:text-[20px] font-medium break-words">
+              {isUrl(item.contact) ? (
+                <a
+                  href={item.contact}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  {item.contact}
+                </a>
+              ) : isEmail(item.contact) ? (
+                <a href={`mailto:${item.contact}`} className="text-blue-600 underline">
+                  {item.contact}
+                </a>
+              ) : (
+                item.contact
+              )}
             </p>
           </div>
         ))}

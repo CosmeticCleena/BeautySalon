@@ -1,26 +1,26 @@
 export const contactInfo = [
     {
         image: "/img/contact/contactInfo/Icon1.svg",
-        title: "Chat of sales",
-        description: "Contact Our Friendly Team",
-        contact: "salesglam@gmail.com"
+        title: "Trò chuyện để được hỗ trợ",
+        description: "Liên hệ với đội ngũ thân thiện của chúng tôi",
+        contact: "trangcleena@gmail.com"
     },
     {
         image: "/img/contact/contactInfo/Icon2.svg",
-        title: "Chat to support",
-        description: "Support You Can Count On",
-        contact: "supportglam@gmail.com"
+        title: "Trò chuyện qua fanpage",
+        description: "Liên hệ với đội ngũ của chúng tôi ",
+        contact: "https://www.facebook.com/ThammyCLEENA"
     },
     {
         image: "/img/contact/contactInfo/Icon3.svg",
-        title: "Visit us",
-        description: "Stop by Our Headquarters",
-        contact: "View on Google map"
+        title: "Ghé thăm chúng tôi",
+        description: "Ghé thăm trụ sở chính của chúng tôi",
+        contact: "Xem trên bản đồ Google"
     },
     {
         image: "/img/contact/contactInfo/Icon4.svg",
-        title: "Call us",
-        description: "Monto Fri, 8 AM - 5 PM",
-        contact: "+ 123 456-7890"
+        title: "Gọi cho chúng tôi",
+        description: "8h30 sáng - 21h30 tối ",
+        contact: "088 886 8856 "
     }
 ];

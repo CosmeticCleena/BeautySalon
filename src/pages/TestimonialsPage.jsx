@@ -18,7 +18,7 @@ const TestimonialsPage = () => {
       />
       <SpaGallerySection />
       <Advantages pageType={"customerStory"}/>
-      <Slider type={"customerStories"}/>
+      {/* <Slider type={"customerStories"}/> */}
       <SpaBlog pageType={"customerStories"}/>
       <SpaVideoSection pageType={"CustomerStories"}/>
       <SpaForm display={"flex"}/>

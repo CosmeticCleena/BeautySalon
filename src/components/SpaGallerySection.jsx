@@ -129,7 +129,7 @@
 
 import React from "react";
 import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
-import Spa1 from "/img/Spa1.svg";
+import Spa1 from "/img/Spa1.jpg";
 import Spa2 from "/img/Spa2.svg";
 import Spa3 from "/img/Spa3.svg";
 import Spa4 from "/img/Spa4.svg";

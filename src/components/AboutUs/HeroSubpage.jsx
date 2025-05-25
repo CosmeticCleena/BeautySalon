@@ -10,7 +10,7 @@ const HeroSubpage = ({ title, subtitle, imgLink }) => {
           className="w-full h-full object-cover -z-50" 
         />
       </div>
-      <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+      {/* <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
         <div className="flex items-center justify-center flex-col gap-3 md:gap-4 lg:gap-5 px-4 text-center">
           <h2 className="text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] text-white font-normal">
             {title}
@@ -19,7 +19,7 @@ const HeroSubpage = ({ title, subtitle, imgLink }) => {
             {subtitle}
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

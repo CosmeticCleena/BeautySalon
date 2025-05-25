@@ -39,8 +39,7 @@ const SpaBlog = ({ pageType }) => {
           <h2 className="text-[22px] md:text-[28px] lg:text-[34px] font-bold leading-tight md:leading-[40px] lg:leading-[50px]">
             {articles[pageType].blogs[0].title}
           </h2>
-          <p className="text-[16px] md:text-[18px] lg:text-[20px] font-normal leading-[24px] md:leading-[28px] lg:leading-[32px]">
-            {articles[pageType].blogs[0].excerpt}
+          <p className="text-[16px] md:text-[18px] lg:text-[20px] font-normal leading-[24px] md:leading-[28px] lg:leading-[32px]" dangerouslySetInnerHTML={{ __html: articles[pageType].blogs[0].excerpt }}>
           </p>
           <div className="flex justify-start w-full mt-2 md:mt-4">
             <button className="bg-[#D1AE62] w-full sm:w-fit hover:bg-[#D1B76E] text-white py-2 md:py-3 px-6 md:px-8 transition-colors text-sm md:text-base">
@@ -51,7 +50,7 @@ const SpaBlog = ({ pageType }) => {
       </div>
 
       {/* Article Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 w-full">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 w-full">
         {articles[pageType].blogs.slice(1).map((article) => (
           <div
             key={article.id}
@@ -88,7 +87,7 @@ const SpaBlog = ({ pageType }) => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
