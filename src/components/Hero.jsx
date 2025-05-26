@@ -43,7 +43,7 @@ const Hero = () => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="flex flex-col items-center justify-center h-full px-4 md:px-0">
+      <div className="flex flex-col items-center justify-center h-full w-screen px-4 md:px-0">
         {/* <h1 className="text-white text-[14px] md:text-[16px] font-[600]">
           Chào mừng đến với Cleena
         </h1>

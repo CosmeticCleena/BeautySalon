@@ -204,7 +204,7 @@ const SpaForm = ({ display }) => {
             <input
               type="text"
               name="name"
-              placeholder="Your Name*"
+              placeholder="Tên của bạn*"
               value={formData.name}
               onChange={handleChange}
               className={`w-full border ${
@@ -220,7 +220,7 @@ const SpaForm = ({ display }) => {
             <input
               type="text"
               name="email"
-              placeholder="Email Address*"
+              placeholder="Địa chỉ Email*"
               value={formData.email}
               onChange={handleChange}
               className={`w-full border ${
@@ -270,11 +270,11 @@ const SpaForm = ({ display }) => {
               } focus:border-[#D1AE62] p-3 placeholder:px-4 row-span-1`}
             >
               <option value="" disabled>
-                Select your option
+                Lựa chọn của bạn *
               </option>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
+              <option value="option1">Lựa chọn 1</option>
+              <option value="option2">Lựa chọn 2</option>
+              <option value="option3">Lựa chọn 3</option>
             </select>
             {errors.service && (
               <p className="mt-1 text-red-500 text-xs">{errors.service}</p>
@@ -284,7 +284,7 @@ const SpaForm = ({ display }) => {
           <div className="row-span-2">
             <textarea
               name="message"
-              placeholder="Your Message*"
+              placeholder="Tin nhắn*"
               value={formData.message}
               onChange={handleChange}
               className="w-full h-full border border-[#D8D8D8] focus:border-[#D1AE62] p-3 placeholder:px-1"

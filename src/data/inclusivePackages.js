@@ -1,5 +1,5 @@
 const packageData = {
-  title: "Gói Dịch Vụ Trọn Gói",
+  title: "Chính sách Cleena",
   features: [
     {
       id: 1,
