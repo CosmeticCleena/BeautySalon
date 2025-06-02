@@ -15,7 +15,7 @@ const ServicesPage = () => {
       <HeroSubpage
         title={"Our Services"}
         subtitle={"Home / Our Services"}
-        imgLink={"/img/ourServices/Hero.svg"}
+        imgLink={"/img/ourServices/hero.png"}
       />
       <FeatureServices />
       {/* <SpaExpertTeam pt={"pt-8"} /> */}

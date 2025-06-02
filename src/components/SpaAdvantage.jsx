@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import SpaTherapy from "/img/DSC05316.jpg";
+import Dg1 from "/img/dg1.jpg";
 import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 import spaAdvantages from "../data/spaTherapy";
+import leftButton from "/img/leftButton.svg";
+import rightButton from "/img/rightButton.svg";
+
+const images = [SpaTherapy, Dg1];
 
 const SpaAdvantage = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <div className="container mx-auto px-4 py-16 md:py-20 lg:py-24">
       <div className="flex flex-col gap-8 md:gap-12">
@@ -18,12 +33,26 @@ const SpaAdvantage = () => {
         {/* Khung chính chứa ảnh và nội dung */}
         <div className="flex flex-col lg:flex-row gap-10 md:gap-12 lg:gap-16 items-center">
           {/* Phần ảnh chiều ngang */}
-          <div className="w-full lg:w-3/5">
+          <div className="w-full lg:w-3/5 relative">
             <img 
-              src={SpaTherapy} 
+              src={images[currentImage]} 
               className="w-full h-auto object-cover rounded-md shadow-md" 
               alt="Spa Therapy"
             />
+            <button
+              onClick={handlePrev}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#D1AE62] rounded-full p-2 shadow-lg flex items-center justify-center transition-all duration-200 hover:bg-[#D1B76E] hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D1AE62] focus:ring-offset-2"
+              aria-label="Previous image"
+            >
+              <img src={leftButton} alt="Back" className="w-6 h-6" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#D1AE62] rounded-full p-2 shadow-lg flex items-center justify-center transition-all duration-200 hover:bg-[#D1B76E] hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D1AE62] focus:ring-offset-2"
+              aria-label="Next image"
+            >
+              <img src={rightButton} alt="Next" className="w-6 h-6" />
+            </button>
           </div>
           
           {/* Phần nội dung */}

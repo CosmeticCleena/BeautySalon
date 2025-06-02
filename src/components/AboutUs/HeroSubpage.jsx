@@ -2,8 +2,8 @@ import React from "react";
 
 const HeroSubpage = ({ title, subtitle, imgLink }) => {
   return (
-    <div className="w-full relative">
-      <div className="w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+    <div className="w-full relative pt-[82px]">
+      <div className="w-full  overflow-hidden">
         <img 
           src={imgLink} 
           alt="" 

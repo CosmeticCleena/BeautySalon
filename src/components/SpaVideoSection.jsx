@@ -290,7 +290,7 @@ const SpaAdvantageSlider = () => {
           <div className="flex-1 flex items-center justify-center">
             <img
               src={currentSpa.image}
-              className="w-full h-64 lg:h-96 object-cover rounded-lg shadow"
+              className="w-full h-72 lg:h-[450px] object-cover rounded-lg shadow"
               alt={currentSpa.heading}
             />
           </div>

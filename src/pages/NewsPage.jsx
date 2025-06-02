@@ -4,11 +4,11 @@ import NewsList from '../components/News/NewsList';
 const NewsPage = () => {
   return (
     <>
-     <HeroSubpage
+     {/* <HeroSubpage
         title={"Latest News"}
         subtitle={"Home / Latest News"}
         imgLink={"/img/news/Hero.svg"}
-      />
+      /> */}
       <NewsList/>
     </>
   )

@@ -114,7 +114,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
 const NewsList = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8; 
+  const itemsPerPage = 6; 
   
   const totalPages = Math.ceil(newsItems.length / itemsPerPage);
   
@@ -130,13 +130,13 @@ const NewsList = () => {
   };
 
   return (
-    <div className="w-full sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[70%] 2xl:max-w-[60%] mx-auto py-8 sm:py-12 md:py-16 lg:py-20 px-3 sm:px-4 md:px-6 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2  gap-4 sm:gap-6 md:gap-8">
+    <div className="w-full sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[70%] 2xl:max-w-[60%] mx-auto py-24 sm:py-24 md:py-16 lg:py-24 px-3 sm:px-4 md:px-6 lg:px-8">
+      <h1 className="text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-bold text-center mb-8 text-[#D1AE62]">Tin tức & Sự kiện</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
         {currentItems.map((item) => (
           <NewsCard key={item.id} item={item} />
         ))}
       </div>
-      
       <Pagination 
         currentPage={currentPage} 
         totalPages={totalPages} 

@@ -15,7 +15,7 @@ function App() {
     <>
       <NavBar />
       <div
-        className="min-h-screen w-full p-0 m-0 text-[16px] bg-no-repeat bg-fixed"
+        className="min-h-screen max-w-screen p-0 m-0 text-[16px] bg-no-repeat bg-fixed"
         style={{
           backgroundImage: `url(${BackGround})`,
           backgroundSize: "cover",

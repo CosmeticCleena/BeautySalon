@@ -14,7 +14,7 @@ const TestimonialsPage = () => {
       <HeroSubpage
         title={"Customer Stories"}
         subtitle={"Home / Customer Stories"}
-        imgLink={"/img/customerStories/Hero.svg"}
+        imgLink={"/img/customerStories/hero.png"}
       />
       <SpaGallerySection />
       <Advantages pageType={"customerStory"}/>

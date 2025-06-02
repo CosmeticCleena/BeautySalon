@@ -12,7 +12,7 @@ const AboutPage = () => {
       <HeroSubpage
         title={"About Us"}
         subtitle={"Home / About Us"}
-        imgLink={"/img/aboutUs/Hero.svg"}
+        imgLink={"/img/aboutUs/hero.png"}
       />
       <AboutSalon />
       {/* <LogoBar bgColor={""} /> */}

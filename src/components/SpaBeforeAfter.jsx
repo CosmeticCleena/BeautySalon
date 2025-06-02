@@ -3,8 +3,9 @@ import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 
 const images = [
   "/img/beforeAfter/1.png",
-  "/img/beforeAfter/jack1.jpeg",
-  "/img/beforeAfter/jack2.jpeg",
+  "/img/beforeAfter/2.jpg",
+  "/img/beforeAfter/3.jpg",
+  "/img/beforeAfter/4.jpg",
 
 ];
 

@@ -8,7 +8,7 @@ const ContactPage = () => {
       <HeroSubpage
         title={"Contact Us"}
         subtitle={"Home / Contact Us"}
-        imgLink={"/img/contact/Hero.svg"}
+        imgLink={"/img/contact/hero.png"}
       />
       <GetInTouch />
     </>

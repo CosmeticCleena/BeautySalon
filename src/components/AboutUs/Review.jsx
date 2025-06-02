@@ -9,9 +9,9 @@ const Review = () => {
         <div className="flex flex-col gap-5 md:gap-6 w-full lg:w-auto order-2 lg:order-1">
           <div className="flex flex-col sm:flex-row shadow-lg shadow-black/5 p-4 md:p-5 gap-4 md:gap-5 w-full sm:w-[90%] self-center sm:self-end">
             <img
-              src="/img/aboutUs/GaiXinhVcl1.svg"
+              src="/img/aboutUs/xinh1.jpg"
               alt="Customer testimonial"
-              className="w-16 h-16 md:w-20 md:h-20 mx-auto sm:mx-0"
+              className="w-16 h-16 md:w-20 md:h-20 mx-auto sm:mx-0 rounded-full object-cover border-2 border-[#D1AE62]"
             />
             <div className="flex flex-col gap-2 md:gap-4 justify-center max-w-full sm:max-w-[400px] text-center sm:text-left">
               <p className="text-xl md:text-2xl font-semibold">
@@ -27,9 +27,9 @@ const Review = () => {
 
           <div className="flex flex-col sm:flex-row shadow-lg shadow-black/5 p-4 md:p-5 gap-4 md:gap-5 w-full sm:w-[90%] self-center sm:self-start">
             <img
-              src="/img/aboutUs/GaiXinhVcl2.svg"
+              src="/img/aboutUs/xinh2.jpg"
               alt="Customer testimonial"
-              className="w-16 h-16 md:w-20 md:h-20 mx-auto sm:mx-0"
+              className="w-16 h-16 md:w-20 md:h-20 mx-auto sm:mx-0 rounded-full object-cover border-2 border-[#D1AE62]"
             />
             <div className="flex flex-col gap-2 md:gap-4 justify-center max-w-full sm:max-w-[400px] text-center sm:text-left">
               <p className="text-xl md:text-2xl font-semibold">
