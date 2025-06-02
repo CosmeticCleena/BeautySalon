@@ -6,7 +6,7 @@ import spaAdvantages from "../data/spaTherapy";
 import leftButton from "/img/leftButton.svg";
 import rightButton from "/img/rightButton.svg";
 
-const images = [SpaTherapy, Dg1];
+const images = [Dg1,SpaTherapy];
 
 const SpaAdvantage = () => {
   const [currentImage, setCurrentImage] = useState(0);
