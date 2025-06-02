@@ -68,7 +68,7 @@ export const newsItems = [
     id: 2,
     title: 'NHỮNG ĐIỀU BẠN CẦN BIẾT TRƯỚC KHI XỬ LÍ NÁM',
     excerpt: 'Lorem ipsum simply dummy text of the printing and typesetting industry when an unknown printer took a galley.',
-    image: '/img/news/blogs/image1.svg',
+    image: '/img/news/blogs/kkk.png',
     category: 'Spa & Wellness',
     views: 1570,
     comments: 18,
