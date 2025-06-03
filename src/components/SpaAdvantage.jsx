@@ -36,7 +36,7 @@ const SpaAdvantage = () => {
           <div className="w-full lg:w-3/5 relative">
             <img 
               src={images[currentImage]} 
-              className="w-full h-auto object-cover rounded-md shadow-md" 
+              className="w-full h-auto object-cover rounded-md" 
               alt="Spa Therapy"
             />
             <button
