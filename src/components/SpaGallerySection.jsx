@@ -158,11 +158,11 @@ const SpaGallerySection = () => {
         </div>
         
         {/* Center large image */}
-        <div className="md:w-2/5">
+        <div className="md:w-3/5">
           <img 
             src={Spa1} 
             alt="Cleena Spa Exterior" 
-            className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover rounded-md shadow-lg" 
+            className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-fill rounded-md shadow-lg" 
           />
         </div>
         
@@ -191,7 +191,7 @@ const SpaGallerySection = () => {
         <img 
           src={Spa1} 
           alt="Cleena Spa Exterior" 
-          className="w-full h-[250px] object-cover rounded-md shadow-lg" 
+          className="w-full h-[380px] object-fill rounded-md shadow-lg" 
         />
         <div className="grid grid-cols-2 gap-4">
           <img 
