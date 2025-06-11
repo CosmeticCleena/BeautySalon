@@ -32,14 +32,20 @@ const Advantages = ({pageType}) => {
       <div className="relative w-[75%] sm:w-[60%] md:w-[55%] lg:w-[40%] max-w-[450px] mt-8 lg:mt-0 mx-auto lg:mx-0">
         <img 
           src={`${advanceData[pageType].bigImg}`} 
-          alt="Main treatment image" 
+          alt="Hình ảnh điều trị chính - CLEENA" 
           className="w-full h-auto"
+          loading="lazy"
+          width="450"
+          height="540"
         />
         <div className="absolute top-1/2 right-auto left-0 transform -translate-x-1/3 -translate-y-1/3 w-[120px] h-[144px] sm:w-[150px] sm:h-[180px] md:w-[180px] md:h-[216px] lg:right-3/4 lg:left-auto">
           <img
             src={`${advanceData[pageType].smallImg}`}
-            alt="Detail treatment image"
+            alt="Hình ảnh chi tiết điều trị - CLEENA"
             className="w-full h-full object-cover shadow-md"
+            loading="lazy"
+            width="180"
+            height="216"
           />
         </div>
       </div>

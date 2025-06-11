@@ -131,16 +131,23 @@ import React from "react";
 import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 import Spa1 from "/img/Spa1.jpg";
 import Spa2 from "/img/Spa2.svg";
-import Spa3 from "/img/Spa3.png";
+import Spa3 from "/img/Spa3.webp";
 import Spa4 from "/img/Spa4.svg";
-import Spa5 from "/img/Spa5.png";
+import Spa5 from "/img/Spa5.webp";
 
 const SpaGallerySection = () => {
   return (
     <div className="container mx-auto py-8 md:py-12 lg:py-16 px-4 max-w-6xl">
       <div className="flex flex-col text-center justify-center mb-6 md:mb-8 lg:mb-10 gap-4">
         <h2 className="text-[18px] md:text-[20px] font-normal">TỔNG QUAN THƯƠNG HIỆU</h2>
-        <img src={FlowerUnderHeader} alt="Decorative divider" className="h-5 md:h-6 mx-auto" />
+        <img 
+          src={FlowerUnderHeader} 
+          alt="Yếu tố trang trí hoa - CLEENA" 
+          className="h-5 md:h-6 mx-auto"
+          loading="lazy"
+          width="auto"
+          height="24"
+        />
       </div>
 
       {/* Gallery layout inspired by the image */}
@@ -161,8 +168,11 @@ const SpaGallerySection = () => {
         <div className="md:w-3/5">
           <img 
             src={Spa1} 
-            alt="Cleena Spa Exterior" 
-            className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-fill rounded-md shadow-lg" 
+            alt="CLEENA Spa - Không gian sang trọng hiện đại" 
+            className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover rounded-md shadow-lg"
+            loading="lazy"
+            width="600"
+            height="500"
           />
         </div>
         
@@ -171,15 +181,21 @@ const SpaGallerySection = () => {
           <div>
             <img 
               src={Spa3} 
-              alt="Cleena Customer Experience" 
+              alt="CLEENA - Trải nghiệm khách hàng chuyên nghiệp" 
               className="w-full h-[140px] md:h-[240px] lg:h-[290px] object-cover rounded-md shadow-lg" 
+              loading="lazy"
+              width="300"
+              height="240"
             />
           </div>
           <div>
             <img 
               src={Spa5} 
-              alt="Cleena Professional Team" 
+              alt="CLEENA - Đội ngũ chuyên viên tận tâm" 
               className="w-full h-[140px] md:h-[240px] lg:h-[290px] object-cover rounded-md shadow-lg" 
+              loading="lazy"
+              width="300"
+              height="240"
             />
           </div>
         </div>
@@ -190,19 +206,28 @@ const SpaGallerySection = () => {
         <h2 className="text-2xl font-medium text-[#A37D4E] mb-2 text-center">THẨM MỸ QUỐC TẾ CLEENA</h2>
         <img 
           src={Spa1} 
-          alt="Cleena Spa Exterior" 
-          className="w-full h-[380px] object-fill rounded-md shadow-lg" 
+          alt="CLEENA Spa - Không gian sang trọng hiện đại" 
+          className="w-full h-[380px] object-cover rounded-md shadow-lg" 
+          loading="lazy"
+          width="400"
+          height="380"
         />
         <div className="grid grid-cols-2 gap-4">
           <img 
             src={Spa3} 
-            alt="Cleena Customer Experience" 
+            alt="CLEENA - Trải nghiệm khách hàng" 
             className="w-full h-[120px] object-cover rounded-md shadow-lg" 
+            loading="lazy"
+            width="200"
+            height="120"
           />
           <img 
             src={Spa5} 
-            alt="Cleena Professional Team" 
+            alt="CLEENA - Đội ngũ chuyên viên" 
             className="w-full h-[120px] object-cover rounded-md shadow-lg" 
+            loading="lazy"
+            width="200"
+            height="120"
           />
         </div>
         <p className="text-gray-700 text-sm">
@@ -211,7 +236,10 @@ const SpaGallerySection = () => {
       </div>
 
       <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-        <button className="bg-[#D1AE62] hover:bg-[#D1B76E] text-white py-2 md:py-3 px-6 md:px-8 transition-colors text-sm md:text-base">
+        <button 
+          className="bg-[#D1AE62] hover:bg-[#D1B76E] text-white py-2 md:py-3 px-6 md:px-8 transition-colors text-sm md:text-base"
+          aria-label="Đọc thêm về CLEENA"
+        >
          Đọc thêm
         </button>
         {/* <button className="border border-[#E2C87E] text-[#E2C87E] hover:bg-[#E2C87E] hover:text-white py-2 md:py-3 px-6 md:px-8 transition-colors text-sm md:text-base">

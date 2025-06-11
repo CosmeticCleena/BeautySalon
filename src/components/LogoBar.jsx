@@ -13,11 +13,41 @@ import BiothermWhite from "/img/logo/Biotherm_Light.svg";
 const LogoBar = ({bgColor}) => {
   return (
     <div className={`flex flex-col md:flex-row gap-10 ${bgColor} w-full items-center justify-around py-14 md:py-28`}>
-      <img src={bgColor !== "" ? Revion : RevionWhite} alt="Revion logo" />
-      <img src={bgColor !== "" ? Jovian : JovianWhite} alt="Jovian logo" />
-      <img src={bgColor !== "" ? Lakme : LakmeWhite} alt="Lakme logo" />
-      <img src={bgColor !== "" ? Biotherm : BiothermWhite} alt="Biotherm logo" />
-      <img src={bgColor !== "" ? Loreal : LorealWhite} alt="Loreal logo" />
+      <img 
+        src={bgColor !== "" ? Revion : RevionWhite} 
+        alt="Revion logo" 
+        loading="lazy"
+        width="120"
+        height="60"
+      />
+      <img 
+        src={bgColor !== "" ? Jovian : JovianWhite} 
+        alt="Jovian logo" 
+        loading="lazy"
+        width="120"
+        height="60"
+      />
+      <img 
+        src={bgColor !== "" ? Lakme : LakmeWhite} 
+        alt="Lakme logo" 
+        loading="lazy"
+        width="120"
+        height="60"
+      />
+      <img 
+        src={bgColor !== "" ? Biotherm : BiothermWhite} 
+        alt="Biotherm logo" 
+        loading="lazy"
+        width="120"
+        height="60"
+      />
+      <img 
+        src={bgColor !== "" ? Loreal : LorealWhite} 
+        alt="Loreal logo" 
+        loading="lazy"
+        width="120"
+        height="60"
+      />
     </div>
   );
 };

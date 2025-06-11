@@ -24,7 +24,13 @@ const GetInTouch = () => {
         <h2 className="text-[44px] md:text-[36px] sm:text-[30px] font-medium mb-2 text-center px-4">
           Liên hệ với chúng tôi
         </h2>
-        <img src={FlowerUnderHeader} alt="" />
+        <img 
+          src={FlowerUnderHeader} 
+          alt="Yếu tố trang trí hoa - CLEENA" 
+          loading="lazy"
+          width="auto"
+          height="24"
+        />
       </div>
        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
         {contactInfo.map((item, index) => (
@@ -38,6 +44,9 @@ const GetInTouch = () => {
               src={item.image}
               alt={`${item.title} icon`}
               className="h-[60px] w-[60px] md:h-[70px] md:w-[70px] lg:h-[80px] lg:w-[80px]"
+              loading="lazy"
+              width="80"
+              height="80"
             />
             <h2 className="text-[20px] md:text-[22px] lg:text-[24px] font-bold break-words">
               {item.title}

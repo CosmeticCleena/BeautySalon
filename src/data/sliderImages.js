@@ -1,11 +1,11 @@
 export const images = {
     "aboutUs": [
-        "/img/aboutUs/slider/_DSC6033.png",
-        "/img/aboutUs/slider/_DSC6041.png",
-        "/img/aboutUs/slider/DSC03569.png",
-        "/img/aboutUs/slider/DSC05147.png",
-        "/img/aboutUs/slider/DSC05151.png",
-        "/img/aboutUs/slider/DSC09741 (1).png",
+        "/img/aboutUs/slider/_DSC6033.webp",
+        "/img/aboutUs/slider/_DSC6041.webp",
+        "/img/aboutUs/slider/DSC03569.webp",
+        "/img/aboutUs/slider/DSC05147.webp",
+        "/img/aboutUs/slider/DSC05151.webp",
+        "/img/aboutUs/slider/DSC09741 (1).webp",
 
     ], 
     "customerStories": [

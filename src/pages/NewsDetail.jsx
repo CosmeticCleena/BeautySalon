@@ -24,6 +24,7 @@ const ContentBlock = ({ block }) => {
                 className="w-full h-auto object-cover rounded"
                 width={img.width}
                 height={img.height}
+                loading="lazy"
               />
             </div>
           ))}
@@ -39,6 +40,7 @@ const ContentBlock = ({ block }) => {
             className="w-full h-auto object-cover rounded"
             width={block.width}
             height={block.height}
+            loading="lazy"
           />
         </div>
       );
@@ -51,6 +53,7 @@ const ContentBlock = ({ block }) => {
               src={block.image.src}
               alt={block.image.alt}
               className="w-full h-auto object-cover rounded"
+              loading="lazy"
             />
           </div>
           <div className="md:w-1/2 flex items-center">
@@ -90,6 +93,7 @@ const NewsDetail = () => {
                 src="/img/newDetail/logo/FB.svg"
                 alt="Share on Facebook"
                 className="w-[60px] h-[60px]"
+                loading="lazy"
               />
             </a>
             <a href="#" className="transition-transform hover:scale-110">
@@ -97,6 +101,7 @@ const NewsDetail = () => {
                 src="/img/newDetail/logo/In.svg"
                 alt="Share on LinkedIn"
                 className="w-[60px] h-[60px]"
+                loading="lazy"
               />
             </a>
             <a href="#" className="transition-transform hover:scale-110">
@@ -104,6 +109,7 @@ const NewsDetail = () => {
                 src="/img/newDetail/logo/IN.svg"
                 alt="Share on Instagram"
                 className="w-[60px] h-[60px]"
+                loading="lazy"
               />
             </a>
             <a href="#" className="transition-transform hover:scale-110">
@@ -111,6 +117,7 @@ const NewsDetail = () => {
                 src="/img/newDetail/logo/Tg.svg"
                 alt="Share on Telegram"
                 className="w-[60px] h-[60px]"
+                loading="lazy"
               />
             </a>
           </div>

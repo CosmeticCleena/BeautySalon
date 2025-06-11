@@ -106,9 +106,11 @@ export default function ImageSlider({ type }) {
           >
             <img
               src={image}
-              alt={`Spa service ${index + 1}`}
+              alt={`CLEENA Spa - Dịch vụ ${index + 1}`}
               loading="lazy"
               className="w-full h-48 sm:h-56 md:h-64 object-cover rounded shadow-sm"
+              width="300"
+              height="240"
             />
           </div>
         ))}

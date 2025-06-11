@@ -52,8 +52,11 @@ const Review = () => {
           </p>
           <img
             src={FlowerUnderHeader}
-            alt="Decorative element"
+            alt="Yếu tố trang trí hoa - CLEENA"
             className="h-5 md:h-auto"
+            loading="lazy"
+            width="auto"
+            height="24"
           />
 
           <p className="text-base md:text-lg font-normal text-[#6A6A6A] text-center lg:text-left">

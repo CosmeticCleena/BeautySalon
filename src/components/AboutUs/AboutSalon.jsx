@@ -8,14 +8,20 @@ const AboutSalon = () => {
       <div className="relative flex justify-center mb-10 lg:mb-0">
         <img
           src="/img/aboutUs/bigimg.png"
-          alt="Salon interior"
+          alt="CLEENA - Nội thất salon sang trọng"
           className="w-[260px] sm:w-[280px] md:w-[320px] h-auto"
+          loading="lazy"
+          width="320"
+          height="384"
         />
         <div className="absolute top-1/2 left-1/2 md:left-0 transform -translate-x-1/4 sm:-translate-x-1/3 lg:-translate-x-1/2 translate-y-0 w-[180px] sm:w-[200px] md:w-[240px] h-auto aspect-[4/5]">
           <img
             src="/img/aboutUs/smallimg.png"
-            alt="Treatment detail"
+            alt="CLEENA - Chi tiết điều trị"
             className="w-full h-full object-cover"
+            loading="lazy"
+            width="240"
+            height="300"
           />
         </div>
       </div>

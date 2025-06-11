@@ -276,7 +276,13 @@ const SpaAdvantageSlider = () => {
           <h2 className="text-[16px] md:text-[18px] lg:text-[20px] font-medium mb-2 md:mb-3 w-full text-center">
             Khách Hàng FeedBack
           </h2>
-          <img src={FlowerUnderHeader} alt="Decorative divider" />
+          <img 
+            src={FlowerUnderHeader} 
+            alt="Yếu tố trang trí hoa - CLEENA" 
+            loading="lazy"
+            width="auto"
+            height="24"
+          />
         </div>
         <div
           className={`flex flex-col md:flex-row w-full md:w-4/5 lg:w-3/5 mx-auto justify-center gap-12 md:gap-16 lg:gap-24
@@ -292,6 +298,9 @@ const SpaAdvantageSlider = () => {
               src={currentSpa.image}
               className="w-full h-72 lg:h-[450px] object-cover rounded-lg shadow"
               alt={currentSpa.heading}
+              loading="lazy"
+              width="600"
+              height="450"
             />
           </div>
           <div className="flex flex-col flex-1 gap-6 lg:gap-5 *:text-center *:md:text-start">

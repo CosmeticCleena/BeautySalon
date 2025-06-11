@@ -27,7 +27,14 @@ const SpaAdvantage = () => {
           <h2 className="text-[18px] md:text-[20px] lg:text-[24px] font-medium mb-2 md:mb-3">
             {spaAdvantages.heading}
           </h2>
-          <img src={FlowerUnderHeader} alt="Decorative divider" className="h-5 md:h-6" />
+          <img 
+            src={FlowerUnderHeader} 
+            alt="Yếu tố trang trí hoa - CLEENA" 
+            className="h-5 md:h-6"
+            loading="lazy"
+            width="auto"
+            height="24"
+          />
         </div>
         
         {/* Khung chính chứa ảnh và nội dung */}
@@ -37,21 +44,24 @@ const SpaAdvantage = () => {
             <img 
               src={images[currentImage]} 
               className="w-full h-auto object-cover rounded-md" 
-              alt="Spa Therapy"
+              alt={`CLEENA Spa - Hình ảnh dịch vụ ${currentImage + 1}`}
+              loading="lazy"
+              width="600"
+              height="400"
             />
             <button
               onClick={handlePrev}
               className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#D1AE62] rounded-full p-2 shadow-lg flex items-center justify-center transition-all duration-200 hover:bg-[#D1B76E] hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D1AE62] focus:ring-offset-2"
-              aria-label="Previous image"
+              aria-label="Ảnh trước"
             >
-              <img src={leftButton} alt="Back" className="w-6 h-6" />
+              <img src={leftButton} alt="" className="w-6 h-6" loading="lazy" />
             </button>
             <button
               onClick={handleNext}
               className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#D1AE62] rounded-full p-2 shadow-lg flex items-center justify-center transition-all duration-200 hover:bg-[#D1B76E] hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D1AE62] focus:ring-offset-2"
-              aria-label="Next image"
+              aria-label="Ảnh tiếp theo"
             >
-              <img src={rightButton} alt="Next" className="w-6 h-6" />
+              <img src={rightButton} alt="" className="w-6 h-6" loading="lazy" />
             </button>
           </div>
           
@@ -76,7 +86,10 @@ const SpaAdvantage = () => {
             </div>
             
             <div className="flex justify-center lg:justify-start mt-4">
-              <button className="bg-[#D1AE62] hover:bg-[#D1B76E] text-white py-2 md:py-3 px-6 md:px-8 transition-colors text-sm md:text-base">
+              <button 
+                className="bg-[#D1AE62] hover:bg-[#D1B76E] text-white py-2 md:py-3 px-6 md:px-8 transition-colors text-sm md:text-base"
+                aria-label="Tìm hiểu thêm về dịch vụ CLEENA"
+              >
                 Tìm hiểu thêm
               </button>
             </div>

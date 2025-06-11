@@ -24,14 +24,31 @@ const SpaBlog = ({ pageType }) => {
             src={`${articles[pageType].blogs[0].image}`} 
             alt={articles[pageType].blogs[0].title} 
             className="w-full h-auto object-cover rounded-sm"
+            loading="lazy"
+            width="600"
+            height="400"
           />
         </div>
         <div className="flex flex-col gap-4 md:gap-6 lg:gap-10 w-full md:w-1/2 lg:w-7/12">
           {articles[pageType].displayIcon && (
             <div className="flex flex-wrap gap-3 md:gap-4 text-[14px] md:text-[16px] lg:text-[20px] font-normal items-center">
-              <img src={avatar} alt="Author" className="w-5 h-5 md:w-6 md:h-6" />
+              <img 
+                src={avatar} 
+                alt="Tác giả" 
+                className="w-5 h-5 md:w-6 md:h-6"
+                loading="lazy"
+                width="24"
+                height="24"
+              />
               <p className="mr-3">{articles[pageType].blogs[0].author}</p>
-              <img src={comment} alt="Comments" className="w-5 h-5 md:w-6 md:h-6" />
+              <img 
+                src={comment} 
+                alt="Bình luận" 
+                className="w-5 h-5 md:w-6 md:h-6"
+                loading="lazy"
+                width="24"
+                height="24"
+              />
               <p>{articles[pageType].blogs[0].comments}</p>
             </div>
           )}
@@ -61,14 +78,31 @@ const SpaBlog = ({ pageType }) => {
                 src={`${article.image}`}
                 alt={article.title}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                width="400"
+                height="225"
               />
             </div>
             <div className="flex flex-col gap-4 md:gap-6 p-3 md:p-4">
               {articles[pageType].displayIcon && (
                 <div className="flex items-center flex-wrap gap-2 md:gap-3 text-xs md:text-sm text-gray-600">
-                  <img src={avatar} alt="Author" className="w-4 h-4 md:w-5 md:h-5" />
+                  <img 
+                    src={avatar} 
+                    alt="Tác giả" 
+                    className="w-4 h-4 md:w-5 md:h-5"
+                    loading="lazy"
+                    width="20"
+                    height="20"
+                  />
                   <p className="truncate mr-1 md:mr-2">{article.author}</p>
-                  <img src={comment} alt="Comments" className="w-4 h-4 md:w-5 md:h-5" />
+                  <img 
+                    src={comment} 
+                    alt="Bình luận" 
+                    className="w-4 h-4 md:w-5 md:h-5"
+                    loading="lazy"
+                    width="20"
+                    height="20"
+                  />
                   <p>{article.comments}</p>
                 </div>
               )}
