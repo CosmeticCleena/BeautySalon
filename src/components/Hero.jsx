@@ -37,8 +37,11 @@ const Hero = () => {
   return (
     <div
       ref={heroRef}
-      className="aspect-[16/9] bg-cover bg-center -z-10 overflow-hidden mt-[82px]"
-      style={{ backgroundImage: `url(${heroImage[heroImageIndex].image})` }}
+      className="aspect-[16/9] bg-cover bg-right -z-10 overflow-hidden mt-[82px]"
+      style={{ 
+        backgroundImage: `url(${heroImage[heroImageIndex].image})`,
+        backgroundPosition: 'right center'
+      }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}

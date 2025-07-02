@@ -89,7 +89,7 @@
 //           <img src={Spa1} alt="" className="w-full max-w-[300px] h-auto object-cover rounded" />
 //           <p className="text-center font-medium">Certified FDA-Approved Materials</p>
 //         </div>
-        
+
 //         <div className="grid grid-cols-2 gap-4">
 //           <div className="flex flex-col items-center gap-2">
 //             <img src={Spa2} alt="" className="w-full h-[150px] object-cover rounded" />
@@ -100,7 +100,7 @@
 //             <p className="text-center text-sm">Premium Service</p>
 //           </div>
 //         </div>
-        
+
 //         <div className="grid grid-cols-2 gap-4">
 //           <div className="flex flex-col items-center gap-2">
 //             <img src={Spa3} alt="" className="w-full h-[150px] object-cover rounded" />
@@ -140,9 +140,9 @@ const SpaGallerySection = () => {
     <div className="container mx-auto py-8 md:py-12 lg:py-16 px-4 max-w-6xl">
       <div className="flex flex-col text-center justify-center mb-6 md:mb-8 lg:mb-10 gap-4">
         <h2 className="text-[18px] md:text-[20px] font-normal">TỔNG QUAN THƯƠNG HIỆU</h2>
-        <img 
-          src={FlowerUnderHeader} 
-          alt="Yếu tố trang trí hoa - CLEENA" 
+        <img
+          src={FlowerUnderHeader}
+          alt="Yếu tố trang trí hoa - CLEENA"
           className="h-5 md:h-6 mx-auto"
           loading="lazy"
           width="auto"
@@ -158,41 +158,41 @@ const SpaGallerySection = () => {
           <p className="text-gray-700 mb-6">
             CLEENA được sáng lập bởi CEO Lưu Thu Trang – người tiên phong đưa công nghệ vi sinh Postbiotic 99% 2 in 1 từ Hàn Quốc về Việt Nam, đánh dấu bước ngoặt trong lĩnh vực điều trị nám chuyên sâu. Với tầm nhìn xa và niềm đam mê mãnh liệt với ngành làm đẹp, bà Trang đã không ngừng nghiên cứu, phát triển và ứng dụng các công nghệ hiện đại.
           </p>
-          
+
           <p className="text-gray-700">
             Với khát khao mang đến sự tự tin và hạnh phúc đích thực cho từng khách hàng, CLEENA không ngừng hoàn thiện chất lượng dịch vụ. Tại đây, từng quy trình làm đẹp đều được chăm chút tỉ mỉ theo tiêu chuẩn 5 sao, kết hợp máy móc tân tiến, công nghệ đột phá và đội ngũ chuyên viên tận tâm.
           </p>
         </div>
-        
+
         {/* Center large image */}
         <div className="md:w-3/5">
-          <img 
-            src={Spa1} 
-            alt="CLEENA Spa - Không gian sang trọng hiện đại" 
-            className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover rounded-md shadow-lg"
+          <img
+            src={Spa1}
+            alt="CLEENA Spa - Không gian sang trọng hiện đại"
+            className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover object-right rounded-md shadow-lg"
             loading="lazy"
             width="600"
             height="500"
           />
         </div>
-        
+
         {/* Right two stacked images */}
         <div className="md:w-1/4 flex flex-col gap-6">
           <div>
-            <img 
-              src={Spa3} 
-              alt="CLEENA - Trải nghiệm khách hàng chuyên nghiệp" 
-              className="w-full h-[140px] md:h-[240px] lg:h-[290px] object-cover rounded-md shadow-lg" 
+            <img
+              src={Spa3}
+              alt="CLEENA - Trải nghiệm khách hàng chuyên nghiệp"
+              className="w-full h-[140px] md:h-[240px] lg:h-[290px] object-cover rounded-md shadow-lg"
               loading="lazy"
               width="300"
               height="240"
             />
           </div>
           <div>
-            <img 
-              src={Spa5} 
-              alt="CLEENA - Đội ngũ chuyên viên tận tâm" 
-              className="w-full h-[140px] md:h-[240px] lg:h-[290px] object-cover rounded-md shadow-lg" 
+            <img
+              src={Spa5}
+              alt="CLEENA - Đội ngũ chuyên viên tận tâm"
+              className="w-full h-[140px] md:h-[240px] lg:h-[290px] object-cover rounded-md shadow-lg"
               loading="lazy"
               width="300"
               height="240"
@@ -204,27 +204,27 @@ const SpaGallerySection = () => {
       {/* Mobile layout for the gallery - visible only on small screens */}
       <div className="md:hidden flex flex-col gap-6 mb-8">
         <h2 className="text-2xl font-medium text-[#A37D4E] mb-2 text-center">THẨM MỸ QUỐC TẾ CLEENA</h2>
-        <img 
-          src={Spa1} 
-          alt="CLEENA Spa - Không gian sang trọng hiện đại" 
-          className="w-full h-[380px] object-cover rounded-md shadow-lg" 
+        <img
+          src={Spa1}
+          alt="CLEENA Spa - Không gian sang trọng hiện đại"
+          className="w-full h-[380px] object-cover rounded-md shadow-lg"
           loading="lazy"
           width="400"
           height="380"
         />
         <div className="grid grid-cols-2 gap-4">
-          <img 
-            src={Spa3} 
-            alt="CLEENA - Trải nghiệm khách hàng" 
-            className="w-full h-[120px] object-cover rounded-md shadow-lg" 
+          <img
+            src={Spa3}
+            alt="CLEENA - Trải nghiệm khách hàng"
+            className="w-full h-[120px] object-cover rounded-md shadow-lg"
             loading="lazy"
             width="200"
             height="120"
           />
-          <img 
-            src={Spa5} 
-            alt="CLEENA - Đội ngũ chuyên viên" 
-            className="w-full h-[120px] object-cover rounded-md shadow-lg" 
+          <img
+            src={Spa5}
+            alt="CLEENA - Đội ngũ chuyên viên"
+            className="w-full h-[120px] object-cover rounded-md shadow-lg"
             loading="lazy"
             width="200"
             height="120"
@@ -236,11 +236,11 @@ const SpaGallerySection = () => {
       </div>
 
       <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-        <button 
+        <button
           className="bg-[#D1AE62] hover:bg-[#D1B76E] text-white py-2 md:py-3 px-6 md:px-8 transition-colors text-sm md:text-base"
           aria-label="Đọc thêm về CLEENA"
         >
-         Đọc thêm
+          Đọc thêm
         </button>
         {/* <button className="border border-[#E2C87E] text-[#E2C87E] hover:bg-[#E2C87E] hover:text-white py-2 md:py-3 px-6 md:px-8 transition-colors text-sm md:text-base">
           Make A Call
