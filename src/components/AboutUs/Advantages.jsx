@@ -38,7 +38,7 @@ const Advantages = ({pageType}) => {
           width="450"
           height="540"
         />
-        <div className="absolute top-1/2 right-auto left-0 transform -translate-x-1/3 -translate-y-1/3 w-[120px] h-[144px] sm:w-[150px] sm:h-[180px] md:w-[180px] md:h-[216px] lg:right-3/4 lg:left-auto">
+        {/* <div className="absolute top-1/2 right-auto left-0 transform -translate-x-1/3 -translate-y-1/3 w-[120px] h-[144px] sm:w-[150px] sm:h-[180px] md:w-[180px] md:h-[216px] lg:right-3/4 lg:left-auto">
           <img
             src={`${advanceData[pageType].smallImg}`}
             alt="Hình ảnh chi tiết điều trị - CLEENA"
@@ -47,7 +47,7 @@ const Advantages = ({pageType}) => {
             width="180"
             height="216"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
