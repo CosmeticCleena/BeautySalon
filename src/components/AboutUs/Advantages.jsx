@@ -18,8 +18,7 @@ const Advantages = ({pageType}) => {
           dangerouslySetInnerHTML={{ __html: advanceData[pageType].title }}
         ></p>
         
-        <p className="text-base sm:text-lg font-normal text-[#6A6A6A] leading-relaxed"dangerouslySetInnerHTML={{ __html: advanceData[pageType].content }} >
-
+        <p className="text-sm sm:text-base md:text-base font-normal text-[#6A6A6A] leading-relaxed" dangerouslySetInnerHTML={{ __html: advanceData[pageType].content }}>
         </p>
         
         <div className="flex gap-6 sm:gap-8 mt-2 sm:mt-4">

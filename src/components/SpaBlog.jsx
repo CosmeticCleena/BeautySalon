@@ -20,9 +20,9 @@ const SpaBlog = ({ pageType }) => {
       {/* Featured Article */}
       <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-12 lg:gap-20 text-[#6A6A6A]">
         <div className="w-full md:w-1/2 lg:w-5/12">
-          <img 
-            src={`${articles[pageType].blogs[0].image}`} 
-            alt={articles[pageType].blogs[0].title} 
+          <img
+            src={`${articles[pageType].blogs[0].image}`}
+            alt={articles[pageType].blogs[0].title}
             className="w-full h-auto object-cover rounded-sm"
             loading="lazy"
             width="600"
@@ -32,18 +32,18 @@ const SpaBlog = ({ pageType }) => {
         <div className="flex flex-col gap-4 md:gap-6 lg:gap-10 w-full md:w-1/2 lg:w-7/12">
           {articles[pageType].displayIcon && (
             <div className="flex flex-wrap gap-3 md:gap-4 text-[14px] md:text-[16px] lg:text-[20px] font-normal items-center">
-              <img 
-                src={avatar} 
-                alt="Tác giả" 
+              <img
+                src={avatar}
+                alt="Tác giả"
                 className="w-5 h-5 md:w-6 md:h-6"
                 loading="lazy"
                 width="24"
                 height="24"
               />
               <p className="mr-3">{articles[pageType].blogs[0].author}</p>
-              <img 
-                src={comment} 
-                alt="Bình luận" 
+              <img
+                src={comment}
+                alt="Bình luận"
                 className="w-5 h-5 md:w-6 md:h-6"
                 loading="lazy"
                 width="24"
@@ -56,11 +56,11 @@ const SpaBlog = ({ pageType }) => {
           <h2 className="text-[22px] md:text-[28px] lg:text-[34px] font-bold leading-tight md:leading-[40px] lg:leading-[50px]">
             {articles[pageType].blogs[0].title}
           </h2>
-          <p className="text-[16px] md:text-[18px] lg:text-[20px] font-normal leading-[24px] md:leading-[28px] lg:leading-[32px]" dangerouslySetInnerHTML={{ __html: articles[pageType].blogs[0].excerpt }}>
+          <p className="text-sm md:text-base lg:text-base font-normal leading-[20px] md:leading-[24px] lg:leading-[26px]" dangerouslySetInnerHTML={{ __html: articles[pageType].blogs[0].excerpt }}>
           </p>
           <div className="flex justify-start w-full mt-2 md:mt-4">
             <button className="bg-[#D1AE62] w-full sm:w-fit hover:bg-[#D1B76E] text-white py-2 md:py-3 px-6 md:px-8 transition-colors text-sm md:text-base">
-              Read More
+              Đọc thêm
             </button>
           </div>
         </div>

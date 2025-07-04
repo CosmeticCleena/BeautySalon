@@ -59,7 +59,7 @@ const Footer = () => {
           <div className="flex">
             <input
               type="text"
-              placeholder="Nhập email của bạn"
+              placeholder="Nhập số điện thoại của bạn"
               className="bg-white bg-opacity-15 p-3 md:p-4 pr-6 text-white text-sm md:text-base"
             />
             <button className="bg-[#D1AE62] text-black px-4 text-sm md:text-base">

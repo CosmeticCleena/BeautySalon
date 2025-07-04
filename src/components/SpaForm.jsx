@@ -6,7 +6,7 @@ import emailjs from "@emailjs/browser";
 const SpaForm = ({ display }) => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    phoneNumber: "",
     date: "",
     service: "",
     message: "",
@@ -47,11 +47,11 @@ const SpaForm = ({ display }) => {
       newErrors.name = "Name is required";
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
+    const phoneNumberRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.phoneNumber.trim()) {
+      newErrors.phoneNumber = "phoneNumber is required";
+    } else if (!phoneNumberRegex.test(formData.phoneNumber)) {
+      newErrors.phoneNumber = "Please enter a valid phoneNumber";
     }
 
     if (!formData.date.trim()) {
@@ -102,7 +102,7 @@ const SpaForm = ({ display }) => {
           });
           setFormData({
             name: "",
-            email: "",
+            phoneNumber: "",
             date: "",
             service: "",
             message: "",
@@ -110,7 +110,7 @@ const SpaForm = ({ display }) => {
           setIsSubmitting(false);
         })
         .catch((error) => {
-          console.error("Error sending email:", error);
+          console.error("Error sending phoneNumber:", error);
           setSubmitStatus({
             submitted: true,
             success: false,
@@ -219,16 +219,16 @@ const SpaForm = ({ display }) => {
           <div>
             <input
               type="text"
-              name="email"
-              placeholder="Địa chỉ Email*"
-              value={formData.email}
+              name="phoneNumber"
+              placeholder="Số điện thoại*"
+              value={formData.phoneNumber}
               onChange={handleChange}
               className={`w-full border ${
-                errors.email ? "border-red-500" : "border-[#D8D8D8]"
+                errors.phoneNumber ? "border-red-500" : "border-[#D8D8D8]"
               } focus:border-[#D1AE62] p-3 placeholder:px-1`}
             />
-            {errors.email && (
-              <p className="mt-1 text-red-500 text-xs">{errors.email}</p>
+            {errors.phoneNumber && (
+              <p className="mt-1 text-red-500 text-xs">{errors.phoneNumber}</p>
             )}
           </div>
 
@@ -272,9 +272,11 @@ const SpaForm = ({ display }) => {
               <option value="" disabled>
                 Lựa chọn của bạn *
               </option>
-              <option value="option1">Lựa chọn 1</option>
-              <option value="option2">Lựa chọn 2</option>
-              <option value="option3">Lựa chọn 3</option>
+              <option value="option1">Điều trị nám - tàn nhang</option>
+              <option value="option2">Chăm sóc da chuyên sâu</option>
+              <option value="option3">Giảm béo công nghệ cao</option>
+              <option value="option4">Triệt lông vĩnh viễn</option>
+              <option value="option5">Dưỡng sinh phục hồi năng lượng</option>
             </select>
             {errors.service && (
               <p className="mt-1 text-red-500 text-xs">{errors.service}</p>
