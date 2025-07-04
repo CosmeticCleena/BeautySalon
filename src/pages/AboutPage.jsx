@@ -6,6 +6,7 @@ import SpaExpertTeam from "../components/SpaExpertTeam";
 import Slider from "../components/AboutUs/Slider";
 import Advantages from "../components/AboutUs/Advantages";
 import Review from "../components/AboutUs/Review";
+import StatsComponent from "../components/AboutUs/StatsComponent";
 const AboutPage = () => {
   return (
     <>
@@ -15,6 +16,9 @@ const AboutPage = () => {
         imgLink={"/img/aboutUs/hero.png"}
       />
       <AboutSalon />
+
+      <StatsComponent/>
+      
       {/* <LogoBar bgColor={""} /> */}
       <Slider type={"aboutUs"}/>
       <Advantages pageType={"aboutPage"}/>
