@@ -22,7 +22,7 @@ const HomePage = () => {
       {/* <LogoBar bgColor={"bg-[#0D0D0D]"}/> */}
       <SpaAdvantage />
       {/* <SpaPricing /> */}
-      <SpaVideoSection pageType={"HomePage"}/>
+      {/* <SpaVideoSection pageType={"HomePage"}/> */}
       {/* <SpaExpertTeam pt={"pt-[400px]"}/> */}
       <SpaAchievement />
       <SpaBeforeAfter/>

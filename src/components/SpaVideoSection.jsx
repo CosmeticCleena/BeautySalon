@@ -277,7 +277,7 @@ const SpaAdvantageSlider = () => {
             Khách Hàng FeedBack
           </h2>
           <img 
-            src={FlowerUnderHeader} 
+            src={FlowerUnderHeader}
             alt="Yếu tố trang trí hoa - CLEENA" 
             loading="lazy"
             width="auto"

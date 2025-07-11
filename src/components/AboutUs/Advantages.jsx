@@ -12,7 +12,7 @@ const Advantages = ({pageType}) => {
           </h2>
           <img src={FlowerUnderHeader} alt="Decorative element" className="h-5 md:h-auto" />
         </div> */}
-        
+         
         <p 
           className={`text-[28px] text-center md:text-start sm:text-[32px] md:text-[36px] lg:${advanceData[pageType].fontSize} font-normal leading-tight`}
           dangerouslySetInnerHTML={{ __html: advanceData[pageType].title }}

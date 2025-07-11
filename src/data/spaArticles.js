@@ -6,7 +6,7 @@ const articles = {
         blogs:[
             {
                 id: 1,
-                title: "Chị linh  - da lão hóa, nám nội tiết 2 gò má",
+                title: "Chị Linh  - da lão hóa - nám nội tiết 2 gò má",
                 author: "Darrell Steward",
                 comments: "05 Comments",
                 excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -51,7 +51,7 @@ const articles = {
         blogs:[
             {
                 id: 1,
-                title: "Chị linh  - da lão hóa, nám nội tiết 2 gò má",
+                title: "Chị Linh  - da lão hóa - nám nội tiết 2 gò má",
                 author: "Darrell Steward",
                 comments: "05 Comments",
  excerpt: `Chị làm nghề bán vàng nên khách của bên chị toàn là người có địa vị, ăn mặc sang trọng. Bởi vậy mà chị cũng rất để ý đến vẻ ngoài, nhất là da mặt.<br /><br />
