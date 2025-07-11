@@ -1,117 +1,144 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { images } from "../../data/sliderImages";
+import "./slider-optimizations.css";
 
-export default function ImageSlider({ type }) {
+export default React.memo(function ImageSlider({ type }) {
   const sliderRef = useRef(null);
-  const animationFrameId = useRef(null);
+  const scrollTimeoutRef = useRef(null);
 
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
-  const checkScroll = () => {
+  // Memoize images để tránh re-render không cần thiết
+  const imagesList = useMemo(() => images[type] || [], [type]);
+
+  const checkScroll = useCallback(() => {
     if (!sliderRef.current) return;
     const el = sliderRef.current;
     setShowLeftArrow(el.scrollLeft > 0);
     setShowRightArrow(
       el.scrollLeft < el.scrollWidth - el.clientWidth - 10
     );
-  };
+  }, []);
+
+  // Debounced scroll handler để giảm số lần re-render
+  const debouncedCheckScroll = useCallback(() => {
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+    scrollTimeoutRef.current = setTimeout(checkScroll, 16); // ~60fps
+  }, [checkScroll]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sliderRef.current) return;
-      setScrollPosition(sliderRef.current.scrollLeft);
-      checkScroll();
-    };
-
-    const throttledScroll = () => {
-      if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
-      animationFrameId.current = requestAnimationFrame(handleScroll);
-    };
-
     const slider = sliderRef.current;
     if (slider) {
-      slider.addEventListener("scroll", throttledScroll);
+      slider.addEventListener("scroll", debouncedCheckScroll, { passive: true });
     }
 
     checkScroll(); // initial check
-
     window.addEventListener("resize", checkScroll);
+    
     return () => {
       window.removeEventListener("resize", checkScroll);
-      if (slider) slider.removeEventListener("scroll", throttledScroll);
+      if (slider) slider.removeEventListener("scroll", debouncedCheckScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
     };
-  }, []);
+  }, [debouncedCheckScroll, checkScroll]);
 
-  const scrollLeft = () => {
+  const scrollLeft = useCallback(() => {
     if (!sliderRef.current) return;
     const scrollAmount = sliderRef.current.clientWidth;
     const newPosition = Math.max(0, sliderRef.current.scrollLeft - scrollAmount);
     sliderRef.current.scrollTo({ left: newPosition, behavior: "smooth" });
-  };
+  }, []);
 
-  const scrollRight = () => {
+  const scrollRight = useCallback(() => {
     if (!sliderRef.current) return;
     const scrollAmount = sliderRef.current.clientWidth;
     const newPosition = sliderRef.current.scrollLeft + scrollAmount;
     sliderRef.current.scrollTo({ left: newPosition, behavior: "smooth" });
-  };
+  }, []);
 
-  // Touch controls
-  const handleTouchStart = (e) => {
+  // Touch controls với debouncing
+  const handleTouchStart = useCallback((e) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
-  };
+  }, []);
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = useCallback((e) => {
     setTouchEnd(e.targetTouches[0].clientX);
-  };
+  }, []);
 
-  const handleTouchEnd = () => {
+  const handleTouchEnd = useCallback(() => {
     if (!touchStart || !touchEnd) return;
 
     const distance = touchStart - touchEnd;
-    if (distance > 50) scrollRight();
-    if (distance < -50) scrollLeft();
-  };
+    const isSignificantSwipe = Math.abs(distance) > 50;
+    
+    if (isSignificantSwipe) {
+      if (distance > 0) {
+        scrollRight();
+      } else {
+        scrollLeft();
+      }
+    }
+  }, [touchStart, touchEnd, scrollLeft, scrollRight]);
 
   return (
     <div className="relative w-full px-2 sm:px-4">
       <div
         ref={sliderRef}
-        className="w-full flex overflow-x-auto scroll-smooth"
+        className="optimized-slider w-full flex overflow-x-auto scroll-smooth"
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",
           WebkitOverflowScrolling: "touch",
+          willChange: "scroll-position",
+          transform: "translateZ(0)" // Force hardware acceleration
         }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <style jsx>{`
-          div::-webkit-scrollbar {
+        <style>{`
+          .image-slider::-webkit-scrollbar {
             display: none;
           }
         `}</style>
 
-        {images[type].map((image, index) => (
+        {imagesList.map((image, index) => (
           <div
-            key={index}
-            className="w-4/5 sm:w-2/4 md:w-1/3 lg:w-1/4 xl:w-1/5 flex-shrink-0 px-1 sm:px-2"
+            key={`${type}-${index}`}
+            className="optimized-slider-item w-4/5 sm:w-2/4 md:w-1/3 lg:w-1/4 xl:w-1/5 flex-shrink-0 px-1 sm:px-2"
           >
-            <img
-              src={image}
-              alt={`CLEENA Spa - Dịch vụ ${index + 1}`}
-              loading="lazy"
-              className="w-full h-48 sm:h-56 md:h-64 object-cover rounded shadow-sm"
-              width="300"
-              height="240"
-            />
+            <div className="relative overflow-hidden rounded shadow-sm bg-gray-100">
+              <img
+                src={image}
+                alt={`CLEENA Spa - Dịch vụ ${index + 1}`}
+                loading={index < 3 ? "eager" : "lazy"}
+                decoding="async"
+                className={`w-full h-48 sm:h-56 md:h-64 object-cover transition-opacity duration-300 ${
+                  index < 3 ? 'priority-image' : ''
+                }`}
+                width={300}
+                height={240}
+                style={{
+                  aspectRatio: '300/240',
+                  backgroundColor: '#f3f4f6'
+                }}
+                onLoad={(e) => {
+                  e.target.style.opacity = '1';
+                }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                }}
+              />
+            </div>
           </div>
         ))}
       </div>
@@ -139,4 +166,4 @@ export default function ImageSlider({ type }) {
       )}
     </div>
   );
-}
+});
