@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 import services_data from "../data/featureServices";
 import FeatureServiceCard from "./FeatureServiceCard";
 
-const SpaFeatureServices = () => {
+const SpaFeatureServices = memo(() => {
   return (
     <div className="w-[90%] md:w-4/5 mx-auto py-10 md:py-16 lg:py-20 px-4 md:px-0">
       <div className="flex flex-col items-center justify-center mb-6 md:mb-8 lg:mb-10 gap-3 md:gap-4">
@@ -20,6 +20,6 @@ const SpaFeatureServices = () => {
       </div>
     </div>
   );
-};
+});
 
 export default SpaFeatureServices;

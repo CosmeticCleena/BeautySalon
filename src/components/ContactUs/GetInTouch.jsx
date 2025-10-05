@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 import { contactInfo } from "../../data/contactInfo";
 import SpaForm from "../../components/SpaForm";
 
-const GetInTouch = () => {
+const GetInTouch = memo(() => {
    const isUrl = (text) => {
     try {
       const url = new URL(text);
@@ -92,6 +92,6 @@ const GetInTouch = () => {
       </div>
     </div>
   );
-};
+});
 
 export default GetInTouch;

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-const HeroSubpage = ({ title, subtitle, imgLink }) => {
+const HeroSubpage = memo(({ title, subtitle, imgLink }) => {
   return (
     <div className="w-full relative pt-[82px]">
       <div className="w-full  overflow-hidden">
@@ -22,6 +22,6 @@ const HeroSubpage = ({ title, subtitle, imgLink }) => {
       </div> */}
     </div>
   );
-};
+});
 
 export default HeroSubpage;

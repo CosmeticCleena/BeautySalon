@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import FlowerUnderHeader from "/img/Flower-UnderHeader.svg";
 import { Star } from "lucide-react";
 
-const AboutSalon = () => {
+const AboutSalon = memo(() => {
   return (
     <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center py-10 md:py-16 lg:py-20 gap-8 md:gap-16 lg:gap-24 xl:gap-40 px-4 sm:px-8 md:px-12 mx-auto">
 
@@ -98,6 +98,6 @@ Hàng ngàn đánh giá tích cực chính là minh chứng rõ ràng nhất cho
       </div>
     </div>
   );
-};
+});
 
 export default AboutSalon;

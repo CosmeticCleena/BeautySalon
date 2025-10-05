@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import Circle from "/img/Circle.svg";
 
-const FeatureServiceCard = ({ service, isUsingIcon }) => {
+const FeatureServiceCard = memo(({ service, isUsingIcon }) => {
   return (
     <div className="group flex flex-col bg-[`#FFF7F4`] p-6 sm:p-8 md:p-10 justify-start gap-3 sm:gap-4 md:gap-5 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105 hover:bg-[`#FFF0EA`]">
       <div className="relative">
@@ -40,6 +40,6 @@ const FeatureServiceCard = ({ service, isUsingIcon }) => {
       </div>
     </div>
   );
-};
+});
 
 export default FeatureServiceCard;
